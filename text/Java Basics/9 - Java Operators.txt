@@ -1,0 +1,309 @@
+Java Operators
+
+Java Operators
+- Operators are used to perform operations on variables and values.
+- In the example below, we use the + operator to add together two values:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        int x = 100 + 50;
+        System.out.println(x);
+    }
+}
+
+- Although the + operator is often used to add together two values, like in the example above, it can also be used to add together a variable and a value, or a variable and another variable:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        int sum1 = 100 + 50;
+        int sum2 = sum1 + 250;
+        int sum3 = sum2 + sum2;
+        System.out.println(sum1);
+        System.out.println(sum2);
+        System.out.println(sum3);  
+    }
+}
+
+- Java divides the operators into the following groups:
+--- Arithmetic operators
+--- Assignment operators
+--- Comparison operators
+--- Logical operators
+--- Bitwise operators
+
+Java Arithmetic Operators
+
+Arithmetic Operators
+- Arithmetic operators are used to perform common mathematical operations.
+
+Operator	Name	        Description	                            Example
++	        Addition	    Adds together two values	            x + y	
+-	        Subtraction	    Subtracts one value from another	    x - y	
+*	        Multiplication	Multiplies two values	                x * y	
+/	        Division	    Divides one value by another	        x / y	
+%	        Modulus	        Returns the division remainder	        x % y	
+++	        Increment	    Increases the value of a variable by 1	++x	
+--	        Decrement	    Decreases the value of a variable by 1	--x
+
+- Here is an example using different arithmetic operators in one example:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        int x = 10;
+        int y = 3;
+
+        System.out.println(x + y); // 13
+        System.out.println(x - y); // 7
+        System.out.println(x * y); // 30
+        System.out.println(x / y); // 3
+        System.out.println(x % y); // 1
+
+        int z = 5;
+        ++z;
+        System.out.println(z); // 6
+        --z;
+        System.out.println(z); // 5
+    }
+}
+
+- Note: When dividing two integers in Java, the result will also be an integer. For example, 10 / 3 gives 3. If you want a decimal result, use double values, like 10.0 / 3.
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 3;
+        System.out.println(a / b);   // Integer division, result is 3
+
+        double c = 10.0d;
+        double d = 3.0d;
+        System.out.println(c / d);   // Decimal division, result is 3.333...
+    }
+}
+
+Incrementing and Decrementing
+- Incrementing and decrementing are very common in programming, especially when working with counters, loops, and arrays (which you will learn more about in later chapters).
+- The ++ operator increases a value by 1, while the -- operator decreases a value by 1:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        int x = 5;
+
+        ++x; // Increment x by 1
+        System.out.println(x); // 6
+
+        --x; // Decrement x by 1
+        System.out.println(x); // 5
+    }
+}
+
+Real Life Example: Counting People
+- Imagine you are building a program to count how many people enter and leave a room. You can use ++ to increase the counter when someone enters, and -- to decrease it when someone leaves:
+- Example 
+
+public class Main {
+    public static void main(String[] args) {
+        int peopleInRoom = 0;
+
+        // 3 people enter
+        peopleInRoom++;
+        peopleInRoom++;
+        peopleInRoom++;
+
+        System.out.println(peopleInRoom); // 3
+
+        // 1 person leaves
+        peopleInRoom--;
+
+        System.out.println(peopleInRoom); // 2
+    }
+}
+
+Java Assignment Operators
+
+Assignment Operators
+- Assignment operators are used to assign values to variables.
+- In the example below, we use the assignment operator (=) to assign the value 10 to a variable called x:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        int x = 10;
+        System.out.println(x);
+    }
+}
+
+- The addition assignment operator (+=) adds a value to a variable:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        int x = 10;
+        x += 5;
+        System.out.println(x);
+    }
+}
+
+- A list of all assignment operators:
+
+Operator	Example	    Same As
+=	        x = 5	    x = 5	
++=	        x += 3	    x = x + 3	
+-=	        x -= 3	    x = x - 3	
+*=	        x *= 3	    x = x * 3	
+/=	        x /= 3	    x = x / 3	
+%=	        x %= 3	    x = x % 3	
+&=	        x &= 3	    x = x & 3	
+|=	        x |= 3	    x = x | 3	
+^=	        x ^= 3	    x = x ^ 3	
+>>=	        x >>= 3	    x = x >> 3	
+<<=	        x <<= 3	    x = x << 3
+
+- Note: Most assignment operators are just shorter ways of writing code. For example, x += 5 is the same as x = x + 5, but shorter and often easier to read
+
+Real-Life Example: Tracking Savings
+- Assignment operators can also be used in real-life scenarios. For example, you can use the += operator to keep track of savings when you add money to an account:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        int savings = 100; 
+        savings += 50; // add 50 to savings
+        System.out.println("Total savings: " + savings);
+    }
+}
+
+Java Comparison Operators
+
+Comparison Operators
+- Comparison operators are used to compare two values (or variables). This is important in programming, because it helps us to find answers and make decisions.
+- The return value of a comparison is either true or false. These values are known as Boolean values, and you will learn more about them in the Booleans and If..Else chapter.
+- In the following example, we use the greater than operator (>) to find out if 5 is greater than 3:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        int x = 5;
+        int y = 3;
+        System.out.println(x > y); // returns true, because 5 is higher than 3
+    }
+}
+
+- A list of all comparison operators:
+
+Operator	Name	                    Example
+==	        Equal to	                x == y	
+!=	        Not equal	                x != y	
+>	        Greater than	            x > y	
+<	        Less than	                x < y	
+>=	        Greater than or equal to	x >= y	
+<=	        Less than or equal to	    x <= y
+
+Real-Life Examples
+- Comparison operators are often used in real-world conditions, such as checking if a person is old enough to vote:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        int age = 18;
+
+        System.out.println(age >= 18); // true, old enough to vote
+        System.out.println(age < 18);  // false, not old enough
+    }
+}
+
+- Another common use is checking if a password is long enough:
+
+public class Main {
+    public static void main(String[] args) {
+        int passwordLength = 5;
+
+        System.out.println(passwordLength >= 8); // false, too short
+        System.out.println(passwordLength < 8);  // true, needs more characters
+    }
+}
+
+Java Logical Operators
+
+Logical Operators
+- As with comparison operators, you can also test for true or false values with logical operators.
+- Logical operators are used to determine the logic between variables or values, by combining multiple conditions::
+
+Operator	Name	        Description	                                            Example	
+&& 	        Logical and	    Returns true if both statements are true	            x < 5 &&  x < 10	
+|| 	        Logical or	    Returns true if one of the statements is true	        x < 5 || x < 4	
+!	        Logical not	    Reverse the result, returns false if the result is true	!(x < 5 && x < 10)
+
+Real-Life Example: Login Check
+- The example below shows how logical operators can be used in a real situation, e.g. when checking login status and access rights:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        boolean isLoggedIn = true;
+        boolean isAdmin = false;
+
+        System.out.println("Regular user: " + (isLoggedIn && !isAdmin));
+        System.out.println("Has access: " + (isLoggedIn || isAdmin));
+        System.out.println("Not logged in: " + (!isLoggedIn));
+    }
+}
+
+- Result:
+
+Is regular user: true
+Has access: true
+Not logged in: false
+
+Java Operator Precedence
+
+Java Operator Precedence
+- When a calculation contains more than one operator, Java follows order of operations rules to decide which part to calculate first.
+- For example, multiplication happens before addition:
+- Example 
+
+public class Main {
+    public static void main(String[] args) {
+        int result1 = 2 + 3 * 4;     // 2 + 12 = 14
+        int result2 = (2 + 3) * 4;   // 5 * 4 = 20
+
+        System.out.println(result1);
+        System.out.println(result2);
+    }
+}
+
+Why Does This Happen?
+- In 2 + 3 * 4, the multiplication is done first, so the answer is 14.
+- If you want the addition to happen first, you must use parentheses: (2 + 3) * 4, which gives 20.
+- Tip: Always use parentheses ( ) if you want to make sure the calculation is done in the order you expect. It also makes your code easier to read.
+
+Order of Operations
+- Here are some common operators, from highest to lowest priority:
+--- () - Parentheses
+--- *, /, % - Multiplication, Division, Modulus
+--- +, - - Addition, Subtraction
+--- >, <, >=, <= - Comparison
+--- ==, != - Equality
+--- && - Logical AND
+--- || - Logical OR
+--- = - Assignment
+
+Another Example
+- Subtraction and addition are done from left to right, unless you add parentheses:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        int result1 = 10 - 2 + 5;      // (10 - 2) + 5 = 13
+        int result2 = 10 - (2 + 5);    // 10 - 7 = 3
+
+        System.out.println(result1);
+        System.out.println(result2);
+    }
+}
+
+- Remember: Parentheses always come first. Use them to control the order of your calculations.

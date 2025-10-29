@@ -1,0 +1,461 @@
+Java Arrays
+
+
+Java Arrays
+- Arrays are used to store multiple values in a single variable, instead of declaring separate variables for each value.
+- To declare an array, define the variable type with square brackets [ ] :
+
+String[] cars;
+
+- We have now declared a variable that holds an array of strings. To insert values to it, you can place the values in a comma-separated list, inside curly braces { }:
+
+String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+
+- To create an array of integers, you could write:
+
+int[] myNum = {10, 20, 30, 40};
+
+Access the Elements of an Array
+- You can access an array element by referring to the index number.
+- This statement accesses the value of the first element in cars:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+        System.out.println(cars[0]);
+    }
+}
+
+- Note: Array indexes start with 0: [0] is the first element. [1] is the second element, etc.
+- Think of an array as numbered boxes, where each box stores an element:
+
+Index	Element
+0	    Volvo
+1	    BMW
+2	    Ford
+3	    Mazda
+
+Change an Array Element
+- To change the value of a specific element, refer to the index number:
+
+cars[0] = "Opel";
+
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+        cars[0] = "Opel";
+        System.out.println(cars[0]);
+    }
+}
+
+Array Length
+- To find out how many elements an array has, use the length property:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+        System.out.println(cars.length);
+    }
+}
+
+The new Keyword
+- You can also create an array by specifying its size with new. This makes an empty array with space for a fixed number of elements, which you can fill later:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        String[] cars = new String[4]; // size is 4
+
+        cars[0] = "Volvo";
+        cars[1] = "BMW";
+        cars[2] = "Ford";
+        cars[3] = "Mazda";
+
+        System.out.println(cars[0]); // Outputs Volvo 
+    }
+}
+
+- However, if you already know the values, you don't need to write new. Both of these create the same array:
+- Example
+
+// With new
+String[] cars = new String[] {"Volvo", "BMW", "Ford", "Mazda"};
+
+// Shortcut (most common)
+String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+
+- Note: You cannot write new String[4] {"Volvo", "BMW", "Ford", "Mazda"}.
+- In Java, when using new, you either:
+- Use new String[4] to create an empty array with 4 slots, and then fill them later
+- Or use new String[] {"Volvo", "BMW", "Ford", "Mazda"} (without specifying the number of elements) to create the array and assign values at the same time
+- Tip: The shortcut syntax is most often used when the values are known at the start. Use new with a size when you want to create an empty array and fill it later
+
+Java Arrays Loop
+
+Loop Through an Array
+- You can loop through the array elements with the for loop, and use the length property to specify how many times the loop should run.
+- This example creates an array of strings and then uses a for loop to print each element, one by one:
+- Example 
+
+public class Main {
+    public static void main(String[] args) {
+        String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+        for (int i = 0; i < cars.length; i++) {
+    
+        }
+    }
+}
+
+- Here is a similar example with numbers. We create an array of integers and use a for loop to print each value:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        int[] numbers = {10, 20, 30, 40};
+
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.println(numbers[i]);
+        }
+    }
+}
+
+Calculate the Sum of Elements
+- Now that you know how to work with arrays and loops, let's use them together to calculate the sum of all elements in an array:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        int[] numbers = {1, 5, 10, 25};
+        int sum = 0;
+
+        // Loop through the array and add each element to sum
+        for (int i = 0; i < numbers.length; i++) {
+            sum += numbers[i];
+        }
+
+        System.out.println("The sum is: " + sum);
+    }
+}
+
+Loop Through an Array with For-Each
+- There is also a "for-each" loop, which is used exclusively to loop through elements in an array (or other data structures):
+- Syntax
+
+for (type variable : arrayname) {
+    // code block to be executed
+}
+
+- The colon (:) is read as "in". So you can read the loop as: "for each variable in array".
+- The following example uses a for-each loop to print all elements in the cars array:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+        
+        for (String car : cars) {
+            System.out.println(car);
+        }    
+    }
+}
+
+- This means: for each String in the cars array (here called car), print its value.
+- Compared to a regular for loop, the for-each loop is easier to write and read because it does not need a counter (like i < cars.length). However, it only gives you the values, not their positions (indexes) in the array.
+- So, if you need both the position (index) of each element and its value, a regular for loop is the right choice. For example, when printing seat numbers in a theater row, you need to show both the seat number (the index) and who is sitting there (the value):
+- Example 
+
+public class Main {
+    public static void main(String[] args) {
+        String[] seats = {"Jenny", "Liam", "Angie", "Bo"};
+
+        for (int i = 0; i < seats.length; i++) {
+            System.out.println("Seat number " + i + " is taken by " + seats[i]);
+        }
+    }
+}
+
+- Note: The for-each loop is great when you only need to read elements. If you want to change the elements later, or keep track of their index, use a regular for loop instead.
+
+Java Arrays - Real-Life Examples
+
+Real-Life Example
+- To demonstrate a practical example of using arrays, let's create a program that calculates the average of different ages:
+- Example 
+
+public class Main {
+    public static void main(String[] args) {
+        // An array storing different ages
+        int ages[] = {20, 22, 18, 35, 48, 26, 87, 70};
+
+        float avg, sum = 0;
+
+        // Get the length of the array
+        int length = ages.length;
+
+        // Loop through the elements of the array
+        for (int age : ages) {
+            sum += age;
+        }
+        
+        // Calculate the average by dividing the sum by the length
+        avg = sum / length;
+
+        // Print the average
+        System.out.println("The average age is: " + avg);
+    }
+}
+
+- And in this example, we create a program that finds the lowest age among different ages:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        // An array storing different ages
+        int ages[] = {20, 22, 18, 35, 48, 26, 87, 70};
+
+        // Get the length of the array
+        int length = ages.length;
+        
+        // Create a 'lowest age' variable and assign the first array element of ages to it
+        int lowestAge = ages[0];
+
+        // Loop through the elements of the ages array to find the lowest age
+        for (int age : ages) {
+            // Check if the current age is smaller than the current 'lowest age'
+            if (lowestAge > age) {
+                // If the smaller age is found, update 'lowest age' with that element
+                lowestAge = age;
+            }
+        }
+
+        // Output the value of the lowest age
+        System.out.println("The lowest age in the array is: " + lowestAge);
+    }
+}
+
+- Create a program with a list of numbers where you want to skip negative values, but stop completely if you find a zero:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        int[] numbers = {3, -1, 7, 0, 9};
+
+        for (int n : numbers) {
+            if (n < 0) {
+                continue; // skip negative numbers
+            }
+            if (n == 0) {
+                break; // stop loop when zero is found
+            }
+            System.out.println(n);
+        }
+    }
+}
+
+- Create a program that keeps track of the highest and lowest values in an array:
+- Example 
+
+public class Main {
+    public static void main(String[] args) {
+        int[] numbers = {45, 12, 98, 33, 27};
+
+        int max = numbers[0];
+        int min = numbers[0];
+
+        for (int n : numbers) {
+            if (n > max) {
+                max = n;
+            }
+            if (n < min) {
+                min = n;
+            }
+        }
+
+        System.out.println("Max: " + max);
+        System.out.println("Min: " + min);
+    }
+}
+
+- Create a program that prints the seat numbers in a theater row, showing both the seat number (the index) and who is sitting there (the value):
+- Example 
+
+public class Main {
+    public static void main(String[] args) {
+        String[] seats = {"Jenny", "Liam", "Angie", "Bo"};
+
+        for (int i = 0; i < seats.length; i++) {
+            System.out.println("Seat number " + i + " is taken by " + seats[i]);
+        }
+    }
+}
+
+Java Multi-Dimensional Arrays
+
+- Multidimensional Arrays
+- A multidimensional array is an array that contains other arrays.
+- You can use it to store data in a table with rows and columns.
+- To create a two-dimensional array, write each row inside its own curly braces:
+
+int[][] myNumbers = { {1, 4, 2}, {3, 6, 8} };
+
+- Here, myNumbers has two arrays (two rows):
+--- First row: {1, 4, 2}
+--- Second row: {3, 6, 8}
+- Think of it like this:
+
+
+                        COLUMN 0     COLUMN 1   COLUMN 3
+ROW 0                   1            4          2
+ROW 1                   3            6          8
+
+- Access Elements
+- To access an element of a two-dimensional array, you need two indexes: the first for the row, and the second for the column.
+- Remember: Array indexes start at 0. That means row 0 is the first row, and column 0 is the first column. (So row index 1 is the second row, and column index 2 is the third column.)
+- This statement accesses the element in the second row (index 1) and third column (index 2) of the myNumbers array:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        int[][] myNumbers = { {1, 4, 2}, {3, 6, 8} };
+        System.out.println(myNumbers[1][2]);
+    }
+}
+
+- This example prints the value at row 0, column 1:
+- Example 
+
+public class Main {
+    public static void main(String[] args) {
+        int[][] myNumbers = { {1, 4, 2}, {3, 6, 8} };
+        System.out.println(myNumbers[0][1]);
+    }
+}
+
+
+Change Element Values
+- You can overwrite an existing element using the same two-index notation (row, then column):
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        int[][] myNumbers = { {1, 4, 2}, {3, 6, 8} };
+        myNumbers[1][2] = 9;
+        System.out.println(myNumbers[1][2]); // Outputs 9 instead of 8
+    }
+}
+
+Rows and Columns (Lengths)
+- You can use length to get the number of rows, and myNumbers[row].length for the number of columns in a given row:
+- Example: Sizes
+
+public class Main {
+    public static void main(String[] args) {
+        int[][] myNumbers = { {1, 4, 2}, {3, 6, 8, 5, 2} };
+        
+        System.out.println("Rows: " + myNumbers.length);             // 2
+        System.out.println("Cols in row 0: " + myNumbers[0].length); // 3
+        System.out.println("Cols in row 1: " + myNumbers[1].length); // 5
+    }
+}
+
+- Note: Notice how rows can have different lengths - In this example, the second row has more elements than the first, and that's perfectly valid in Java.
+
+Loop Through a Multidimensional Array
+- Use a for loop inside another for loop to visit every element (row by row):
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        int[][] myNumbers = { {1, 4, 2}, {3, 6, 8, 5, 2} };
+
+        for (int row = 0; row < myNumbers.length; row++) {
+            for (int col = 0; col < myNumbers[row].length; col++) {
+                System.out.println("myNumbers[" + row + "][" + col + "] = " + myNumbers[row][col]);
+            }
+        }
+    }
+}
+
+- Or use a for-each loop in both levels, which many find easier to read:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        int[][] myNumbers = { {1, 4, 2}, {3, 6, 8, 5, 2} };
+
+        for (int[] row : myNumbers) {
+            for (int num : row) {
+                System.out.println(num);
+            }
+        }
+    }
+}
+
+Print Arrays
+- In Java, when you print an array directly, it doesn’t print the contents.
+- Instead, it prints the type ([I for integer array, [Ljava.lang.String; for String array) and a hashcode in hexadecimal — basically a memory reference.
+- Example
+
+public class Main {
+    public static void main(String[] args) {  
+        int[] nums = {10, 20, 30};
+
+        String[] cars = {"BMW", "Golf", "Porshe"};
+
+        System.out.println(nums); 
+
+        System.out.println(cars); 
+    }
+}
+
+- Result 
+
+[I@5ca881b5
+[Ljava.lang.String;@24d46ca6
+
+- To print an array, you must do this 
+- Example
+
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {  
+        int[] nums = {10, 20, 30};
+
+        String[] cars = {"BMW", "Golf", "Porshe"};
+
+        System.out.println(Arrays.toString(nums)); 
+        
+        System.out.println(Arrays.toString(cars));
+    }
+}
+
+Array vs ArrayList
+- Array: fixed size, can’t grow or shrink
+- Example:
+
+public class Main {
+    public static void main(String[] args) {  
+        int[] nums = {10, 20, 30};
+    }
+}
+
+- You can’t add or remove elements later.
+- ArrayList: resizable array (can grow or shrink).
+- Example
+
+public class Main {
+    public static void main(String[] args) {  
+        ArrayList<Integer> nums = new ArrayList<>();
+        nums.add(1);
+        nums.add(2);
+        nums.remove(0);
+    }
+}
+
+- You can add or remove items anytime.
+- Top: Use Array when size is fixed and use ArrayList when size can change.

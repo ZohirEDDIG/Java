@@ -1,0 +1,259 @@
+Java Strings
+
+Java Strings
+- Strings are used for storing text.
+- A String variable contains a collection of characters surrounded by double quotes (""):
+- Example: Create a variable of type String and assign it a value:
+
+class public Main {
+    public static void main(String[] args) {
+        String greeting = "Hello";
+        System.out.println(greeting);
+    }
+}
+
+String Length
+- A String in Java is actually an object, which means it contains methods that can perform certain operations on strings.
+- For example, you can find the length of a string with the length() method:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        String txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        System.out.println("The length of the txt string is: " + txt.length());
+    }
+}
+
+More String Methods
+- There are many string methods available in Java.
+- For example:
+--- The toUpperCase() method converts a string to upper case letters.
+--- The toLowerCase() method converts a string to lower case letters.
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        String txt = "Hello World";
+        System.out.println(txt.toUpperCase());
+        System.out.println(txt.toLowerCase());
+    }
+}
+
+Finding a Character in a String
+- The indexOf() method returns the index (the position) of the first occurrence of a specified text in a string (including whitespace):
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        String txt = "Please locate where 'locate' occurs!";
+        System.out.println(txt.indexOf("locate"));
+    }
+}
+
+- Java counts positions from zero.
+- 0 is the first position in a string, 1 is the second, 2 is the third ...
+- You can use the charAt() method to access a character at a specific position in a string:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        String txt = "Hello";
+        System.out.println(txt.charAt(0));  // H
+        System.out.println(txt.charAt(4));  // o
+    }
+}
+
+Comparing Strings
+- To compare two strings, you can use the equals() method:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        String txt1 = "Hello";
+        String txt2 = "Hello";
+
+        String txt3 = "Greetings";
+        String txt4 = "Great things";
+        
+        System.out.println(txt1.equals(txt2));
+        System.out.println(txt3.equals(txt4));
+    }
+}
+
+Removing Whitespace
+- The trim() method removes whitespace from the beginning and the end of a string:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        String txt = "   Hello World   ";
+        System.out.println("Before: [" + txt + "]");
+        System.out.println("After:  [" + txt.trim() + "]");
+    }
+}
+
+- Result:
+
+Before: [   Hello World   ]
+After: [Hello World]
+
+Complete String Reference
+- For a complete reference of String methods, go to our Java String Methods Reference.
+- The reference contains descriptions and examples of all string methods.
+
+Java String Concatenation
+
+String Concatenation
+- The + operator can be used between strings to combine them. This is called concatenation:
+- Example
+
+public class Main {
+    public static void main(String args[]) {
+        String firstName = "John";
+        String lastName = "Doe";
+        System.out.println(firstName + " " + lastName);
+    }
+}
+
+- Note that we have added an empty text (" ") to create a space between firstName and lastName on print.
+
+Concatenation in Sentences
+- You can use string concatenation to build sentences with both text and variables:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        String name = "John";
+        int age = 25;
+        System.out.println("My name is " + name + " and I am " + age + " years old.");
+    }
+}
+
+- Result:
+
+My name is John and I am 25 years old.
+
+The concat() Method
+- You can also use the concat() method to concatenate strings:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        String firstName = "John ";
+        String lastName = "Doe";
+        System.out.println(firstName.concat(lastName));
+    }
+}
+
+- You can also join more than two strings by chaining concat() calls:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        String a = "Java ";
+        String b = "is ";
+        String c = "fun!";
+        String result = a.concat(b).concat(c);
+        System.out.println(result);
+    }
+}
+
+- Note: While you can use concat() to join multiple strings, most developers prefer the + operator because it is shorter and easier to read.
+
+Java Numbers and Strings
+
+Adding Numbers and Strings
+- WARNING!
+- Java uses the + operator for both addition and concatenation.
+- Numbers are added. Strings are concatenated.
+- If you add two numbers, the result will be a number:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        int x = 10;
+        int y = 20;
+        int z = x + y;
+        System.out.println(z);
+    }
+}
+
+- If you add two strings, the result will be a string concatenation:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        String x = "10";
+        String y = "20";
+        String z = x + y;
+        System.out.println(z);
+    }
+}
+
+- If you add a number and a string, the result will be a string concatenation:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        String x = "10";
+        int y = 20;
+        String z = x + y;
+        System.out.println(z);
+    }
+}
+
+Java Special Characters
+
+Strings - Special Characters
+- Because strings must be written within quotes, Java will misunderstand this string, and generate an error:
+
+String txt = "We are the so-called "Vikings" from the north.";
+
+- The solution to avoid this problem, is to use the backslash escape character.
+- The backslash (\) escape character turns special characters into string characters:
+
+Escape character	Result	Description
+\'	                '	Single quote
+\"	                "	Double quote
+\\	                \	Backslash
+
+- The sequence \"  inserts a double quote in a string:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        String txt = "We are the so-called \"Vikings\" from the north.";
+        System.out.println(txt);
+    }
+}
+
+- The sequence \'  inserts a single quote in a string:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        String txt = "It\'s alright.";
+        System.out.println(txt);
+    }
+}
+
+- The sequence \\  inserts a single backslash in a string:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        String txt = "The character \\ is called backslash.";
+        System.out.println(txt);
+    }
+}
+
+- Other common escape sequences that are valid in Java are:
+
+Code	Result	 
+\n	    New Line	
+\t	    Tab	
+\b	    Backspace: Deletes one character backward (like pressing the Backspace key).
+\r	    Carriage Return: Moves the cursor to the beginning of the current line (used in old typewriters and some systems).
+\f	    Form Feed: Moves the cursor to the next page (used by printers to start a new page).
+
+- Note: Most of these escape codes are rarely used in modern programming. The most common ones are \n (new line), \" (double quote), and \\ (backslash).

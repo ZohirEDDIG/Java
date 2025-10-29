@@ -1,0 +1,567 @@
+Java If ... Else
+
+Java Conditions and If Statements
+- Conditions and if statements let you control the flow of your program - deciding which code runs, and which code is skipped.
+- Think of it like real life: If it rains, take an umbrella. Otherwise, do nothing.
+- Every if statement needs a condition that results in true or false.
+- This means if statements work hand-in-hand with boolean values:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        boolean isRaining = true;
+
+        if (isRaining) {
+            System.out.println("Bring an umbrella!");
+        }
+    }
+}
+
+- Most often, conditions are created using comparison operators, like the ones below:
+--- Less than: a < b
+--- Less than or equal to: a <= b
+--- Greater than: a > b
+--- Greater than or equal to: a >= b
+--- Equal to: a == b
+--- Not equal to: a != b
+--- You can use these conditions to perform different actions for different decisions.
+- Java has the following conditional statements:
+--- Use if to specify a block of code to be executed, if a specified condition is true
+--- Use else to specify a block of code to be executed, if the same condition is false
+--- Use else if to specify a new condition to test, if the first condition is false
+--- Use switch to specify many alternative blocks of code to be executed
+
+The if Statement
+- The if statement specifies a block of code to be executed if a condition is true:
+- Syntax
+
+if (condition) {
+    // block of code to be executed if the condition is true
+}
+
+- The condition inside the if statement must result in a boolean value - it can be either a boolean expression (like x > y) or a boolean variable (like isLightOn).
+- Also note that if is in lowercase letters. Uppercase letters (If or IF) will generate an error.
+- In the example below, we test two values to find out if 20 is greater than 18. If the condition is true, print some text:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        if (20 > 18) {
+            System.out.println("20 is greater than 18"); // obviously
+        }  
+    }
+}
+
+- You can also compare variables:
+- Example: 
+
+public class Main {
+    public static void main(String[] args) {
+        int x = 20;
+        int y = 18;
+        if (x > y) {
+            System.out.println("x is greater than y");
+        }  
+    }
+}
+
+Example explained
+- In the example above we use two variables, x and y, to test whether x is greater than y (using the > operator). As x is 20, and y is 18, and we know that 20 is greater than 18, we print to the screen that "x is greater than y".
+- Comparison is also often used to check if two values are equal, using the == operator:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        int x = 20;
+        int y = 20;
+        if (x == y) {
+            System.out.println("x is equal to y");
+        }  
+    }
+}
+
+- Here the condition x == y is true, because both x and y are 20, so the message "x is equal to y" is printed.
+
+Using Boolean Variables
+- You can also test boolean variables directly in an if statement:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        boolean isLightOn = true;
+
+        if (isLightOn) {
+            System.out.println("The light is on.");
+        }
+    }
+}
+
+- Note: Writing if (isLightOn) is the same as writing if (isLightOn == true), but shorter and easier to read.
+- Here is the same example with the value false to see that the program continues even when the code block does not run:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        boolean isLightOn = false;
+
+        if (isLightOn) {
+            System.out.println("The light is on.");  // This will not be printed
+        }
+        
+        System.out.println("This line always runs.");
+    }
+}
+
+If Without Braces
+- If an if statement has only one line of code, you can write it without curly braces { }:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        if (20 > 18)
+            System.out.println("20 is greater than 18");
+    }
+}
+
+
+Potential Problem
+- Without braces, only the first line after the if belongs to it. Any other lines will run no matter what, which can lead to unexpected results:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        int x = 20;
+        int y = 18;
+
+        if (x > y)
+            System.out.println("x is greater than y");
+            System.out.println("This line runs no matter what (not part of the if statement)");
+    }
+}
+
+The Safe Way
+- To avoid mistakes, always use curly braces { }. This makes it clear which lines belong to the if statement:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        int x = 20;
+        int y = 18;
+
+        if (x > y) {
+            System.out.println("x is greater than y");
+            System.out.println("Both lines are part of the if");
+        }
+        
+        System.out.println("I am outside if, not part of if!");
+    }
+}
+
+- Tip: Always using braces { } makes your code clearer, easier to read, and prevents subtle bugs
+- In the next chapters, you will also learn how to handle else (when the condition is false), else if (to test multiple conditions), and switch (to handle many possible values).
+
+Java Else If
+- The else if Statement
+- Use the else if statement to specify a new condition if the first condition is false.
+- Syntax
+
+if (condition1) {
+    // block of code to be executed if condition1 is true
+} else if (condition2) {
+    // block of code to be executed if the condition1 is false and condition2 is true
+} else {
+    // block of code to be executed if the condition1 is false and condition2 is false
+}
+
+- Think of it like real life: If it rains, bring an umbrella. Else if it's sunny, wear sunglasses. Else, just go outside normally.
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        int weather = 2; // 1 = raining, 2 = sunny, 3 = cloudy
+
+        if (weather == 1) {
+            System.out.println("Bring an umbrella.");
+        } else if (weather == 2) {
+            System.out.println("Wear sunglasses.");
+        } else {
+            System.out.println("Just go outside normally.");
+        }
+    }
+}
+
+- Since weather is 2, the first condition (weather == 1) is not met, so the if block is skipped. The program then checks the else if condition (weather == 2), which is true. That means the else if block runs and prints "Wear sunglasses.".
+
+Another Example
+- This example chooses between three different messages depending on the time of day:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        int time = 22;
+        if (time < 10) {
+            System.out.println("Good morning.");
+        } else if (time < 18) {
+            System.out.println("Good day.");
+        }  else {
+            System.out.println("Good evening.");
+        }
+    }
+}
+
+Example explained
+- In the example above, time (22) is greater than 10, so the first condition is false. The next condition, in the else if statement, is also false, so we move on to the else condition since condition1 and condition2 is both false - and print to the screen "Good evening".
+- However, if the time was 14, our program would print "Good day.":
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        int time = 14;
+        if (time < 10) {
+            System.out.println("Good morning.");
+        } else if (time < 18) {
+            System.out.println("Good day.");
+        } else {
+            System.out.println("Good evening.");
+        }
+    }
+}
+
+Java Short Hand If...Else (Ternary Operator)
+
+Short Hand if...else
+
+- There is also a short-hand if else, which is known as the ternary operator because it consists of three operands.
+- It can be used to replace multiple lines of code with a single line, and is most often used to replace simple if else statements:
+- Syntax 
+
+variable = (condition) ? expressionTrue :  expressionFalse
+
+- Instead of writing:
+- Exaple
+
+public class Main {
+    public static void main(String[] args) {
+        int time = 20;
+        if (time < 18) {
+            System.out.println("Good day.");
+        } else {
+            System.out.println("Good evening.");
+        }  
+    }
+}
+
+- You can simply write:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        int time = 20;
+        String result = (time < 18) ? "Good day." : "Good evening.";
+        System.out.println(result);
+    }
+}
+
+- You can also use the ternary operator directly inside System.out.println() without a temporary variable:
+- Example 
+
+public class Main {
+    public static void main(String[] args) {   
+        int time = 20;
+        System.out.println((time < 18) ? "Good day." : "Good evening.");
+    }
+}
+
+
+Nested Ternary (Optional)
+- You can nest ternary operators to handle more than two possible outcomes, but this can make your code harder to read:
+- Example
+
+public class Main {
+    public static void main(String[] args) {   
+        int time = 22;
+        String message = (time < 12) ? "Good morning."
+                    : (time < 18) ? "Good afternoon."
+                    : "Good evening.";
+        System.out.println(message);
+    }
+}
+
+- Tip: Use the ternary operator for short, simple choices. For longer or more complex logic, the regular if...else is easier to read.
+
+Java Nested If
+
+Nested If
+- You can also place an if statement inside another if. This is called a nested if statement.
+- A nested if lets you check for a condition only if another condition is already true.
+- Syntax
+
+if (condition1) {
+    // code to run if condition1 is true
+    if (condition2) {
+        // code to run if both condition1 and condition2 are true
+    }
+}
+
+Example
+- In this example, we first check if x is greater than 10. If it is, we then check if y is greater than 20:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        int x = 15;
+        int y = 25;
+
+        if (x > 10) {
+            System.out.println("x is greater than 10");
+            
+            // Nested if
+            if (y > 20) {
+                System.out.println("y is also greater than 20");
+            }
+        }
+    }
+}
+
+- Result:
+
+x is greater than 10
+y is also greater than 20
+
+Real-Life Example
+- Nested if statements are useful when you need to test multiple conditions that depend on each other. For example, checking if a person is old enough to vote, and if they are a citizen:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        int age = 20;
+        boolean isCitizen = true;
+
+        if (age >= 18) {
+            System.out.println("Old enough to vote.");
+            
+            if (isCitizen) {
+                System.out.println("And you are a citizen, so you can vote!");
+            } else {
+                System.out.println("But you must be a citizen to vote.");
+            }
+        } else {
+            System.out.println("Not old enough to vote.");
+        }
+    }
+}
+
+Notes
+- You can nest as many if statements as you want, but avoid making the code too deep - it can become hard to read.
+- Nested if is often used together with else and else if for more complex decision making.
+
+Java Logical Operators in Conditions
+Logical Operators in Conditions
+- You can combine or reverse conditions using logical operators. These work together with if, else, and else if to build more complex decisions.
+--- && (AND) - all conditions must be true
+--- || (OR) - at least one condition must be true
+--- ! (NOT) - reverses a condition (true = false, false = true)
+
+AND (&&)
+- Use AND (&&) when both conditions must be true:
+- Example:Test if a is greater than b, and if c is greater than a:
+
+public class Main {
+    public static void main(String[] args) {
+        int a = 200;
+        int b = 33;
+        int c = 500;
+
+        if (a > b && c > a) {
+            System.out.println("Both conditions are true");
+        }
+    }
+}
+
+OR (||)
+- Use OR (||) when at least one of the conditions can be true:
+- Example: Test if a is greater than b, or if a is greater than c:
+
+public class Main {
+    public static void main(String[] args) {
+        int a = 200;
+        int b = 33;
+        int c = 500;
+
+        if (a > b || a > c) {
+            System.out.println("At least one condition is true");
+        }
+    }
+}
+
+
+NOT (!)
+- Use NOT (!) to reverse a condition:
+- Example: Test if a is not greater than b:
+
+public class Main {
+    public static void main(String[] args) {
+        int a = 33;
+        int b = 200;
+
+        if (!(a > b)) {
+            System.out.println("a is NOT greater than b");
+        }
+    }
+}
+
+Real-Life Example
+- In real programs, logical operators are often used for access control. For example, to get access to a system, there are specific requirements:
+- You must be logged in, and then you either need to be an admin, or have a high security clearance (level 1 or 2):
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        boolean isLoggedIn = true;
+        boolean isAdmin = false;
+        int securityLevel = 3; // 1 = highest
+
+        if (isLoggedIn && (isAdmin || securityLevel <= 2)) {
+            System.out.println("Access granted");
+        } else {
+            System.out.println("Access denied");
+        }
+
+        // Try changing securityLevel to test different outcomes:
+        // securityLevel 1 = Access granted
+        // securityLevel 2 = Access granted
+        // securityLevel 3 = Access denied
+        // securityLevel 4 = Access denied
+        // If isAdmin = true, access is granted.
+    }
+}
+
+Java If ... Else Examples
+
+Real-Life Examples
+- This example shows how you can use if..else to "open a door" if the user enters the correct code:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        int doorCode = 1337;
+
+        if (doorCode == 1337) {
+            System.out.println("Correct code. The door is now open.");
+        } else {
+            System.out.println("Wrong code. The door remains closed.");
+        }
+    }
+}
+
+- This example shows how you can use if..else to find out if a number is positive or negative:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        int myNum = 10; // Is this a positive or negative number?
+
+        if (myNum > 0) {
+            System.out.println("The value is a positive number.");
+        } else if (myNum < 0) {
+            System.out.println("The value is a negative number.");
+        } else {
+            System.out.println("The value is 0.");
+        }
+    }
+}
+
+- Find out if a person is old enough to vote:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        int myAge = 25;
+        int votingAge = 18;
+        
+        if (myAge >= votingAge) {
+            System.out.println("Old enough to vote!");
+        } else {
+            System.out.println("Not old enough to vote.");
+        }  
+    }
+}
+
+- Find out if a person is old enough to vote, and if they are a citizen (using nested if statements):
+- Example 
+
+public class Main {
+    public static void main(String[] args) {
+        int age = 20;
+        boolean isCitizen = true;
+
+        if (age >= 18) {
+            System.out.println("Old enough to vote.");
+            if (isCitizen) {
+                System.out.println("And you are a citizen, so you can vote!");
+            } else {
+                System.out.println("But you must be a citizen to vote.");
+            }
+        } else {
+            System.out.println("Not old enough to vote.");
+        }
+    }
+}
+
+- Find out if a number is even or odd:
+- Example 
+
+public class Main {
+    public static void main(String[] args) {
+        int myNum = 5;
+
+        if (myNum % 2 == 0) {
+            System.out.println(myNum + " is even");
+        } else {
+            System.out.println(myNum + " is odd");
+        } 
+    }
+}
+
+- Check temperature:
+- Example
+
+int temperature = 30;
+
+public class Main {
+    public static void main(String[] args) {
+        int temperature = 30;
+
+        if (temperature < 0) {
+            System.out.println("It's freezing!");
+        } else if (temperature < 20) {
+            System.out.println("It's cool.");
+        } else {
+            System.out.println("It's warm.");
+        }
+    }
+}
+
+- System access control example - You must be logged in, and then you either need to be an admin, or have a high security clearance (level 1 or 2) to get access:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        boolean isLoggedIn = true;
+        boolean isAdmin = false;
+        int securityLevel = 3; // 1 = highest
+
+        if (isLoggedIn && (isAdmin || securityLevel <= 2)) {
+            System.out.println("Access granted");
+        } else {
+            System.out.println("Access denied");
+        }
+
+        // Try changing securityLevel to test different outcomes:
+        // securityLevel 1 = Access granted
+        // securityLevel 2 = Access granted
+        // securityLevel 3 = Access denied
+        // securityLevel 4 = Access denied
+        // If isAdmin = true, access is granted.
+    }
+}

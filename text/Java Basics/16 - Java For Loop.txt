@@ -1,0 +1,233 @@
+Java Foor Loop
+
+Java For Loop
+- When you know exactly how many times you want to loop through a block of code, use the for loop instead of a while loop:
+- Syntax
+
+for (statement 1; statement 2; statement 3) {
+    // code block to be executed
+}
+
+- Statement 1 is executed (one time) before the execution of the code block.
+- Statement 2 defines the condition for executing the code block.
+- Statement 3 is executed (every time) after the code block has been executed.
+
+Print Numbers
+- The example below will print the numbers 0 to 4:
+- Example: 
+
+public class Main {
+    public static void main(String[] args) {
+        for (int i = 0; i < 5; i++) {
+            System.out.println(i);
+        }  
+    }
+}
+
+- Example explained
+--- Statement 1 sets a variable before the loop starts: int i = 0
+--- Statement 2 defines the condition for the loop to run: i < 5. If the condition is true, the loop will run again; if it is false, the loop ends.
+--- Statement 3 increases a value each time the code block has run: i++
+
+Print Even Numbers
+- This example prints even values between 0 and 10:
+- Example: 
+
+public class Main {
+    public static void main(String[] args) {
+        for (int i = 0; i <= 10; i = i + 2) {
+            System.out.println(i);
+        }  
+    }
+}
+
+Sum of Numbers
+- This example calculates the sum of numbers from 1 to 5:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        int sum = 0;
+        for (int i = 1; i <= 5; i++) {
+            sum = sum + i;
+        }
+        System.out.println("Sum is " + sum);
+    }
+}
+
+Countdown
+- This example prints a countdown from 5 to 1:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        for (int i = 5; i > 0; i--) {
+            System.out.println(i);
+        }
+    }
+}
+
+For Loop With False Condition
+- Just like a while loop, a for loop may also never run. If the condition is false right from the start, the code inside the loop will be skipped entirely:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        for (int i = 10; i < 5; i++) {
+            System.out.println("This will never be printed");
+        }
+    }
+}
+
+- In this example, the loop starts with i = 10. The condition i < 5 is already false, so the loop body is skipped, and nothing is printed.
+
+Java Nested Loops
+
+Nested Loops
+- It is also possible to place a loop inside another loop. This is called a nested loop.
+- The "inner loop" will be executed one time for each iteration of the "outer loop":
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        // Outer loop.
+        for (int i = 1; i <= 2; i++) {
+            System.out.println("Outer: " + i); // Executes 2 times
+            
+            // Inner loop
+            for (int j = 1; j <= 3; j++) {
+                System.out.println(" Inner: " + j); // Executes 6 times (2 * 3)
+            }
+        } 
+    }
+}
+
+Multiplication Table Example
+- This example uses nested loops to print a simple multiplication table (1 to 3):
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 3; i++) {
+            for (int j = 1; j <= 3; j++) {
+                System.out.print(i * j + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+1 2 3
+2 4 6
+3 6 9
+
+- Nested loops are useful when working with tables, matrices, or multi-dimensional data structures.
+
+Java For Each Loop
+
+The for-each Loop
+- There is also a "for-each" loop, which is used exclusively to loop through elements in an array (or other data structures):
+- Syntax
+
+for (type variableName : arrayName) {
+    // code block to be executed
+}
+
+- The for-each loop is simpler and more readable than a regular for loop, since you don't need a counter (like i < array.length).
+- The following example prints all elements in the cars array:
+- Example 
+
+public class Main {
+    public static void main(String[] args) {
+        String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+        
+        for (String car : cars) {
+            System.out.println(car);
+        }    
+    }
+}
+
+- Here is a similar example with numbers. We create an array of integers and use a for-each loop to print each value:
+- Example 
+
+public class Main {
+    public static void main(String[] args) {
+        int[] numbers = {10, 20, 30, 40};
+
+        for (int num : numbers) {
+            System.out.println(num);
+        }
+    }
+}
+
+- Note: Don't worry if you don't fully understand arrays yet. You will learn more about them in the Java Arrays chapter.
+
+
+Java For Loop Examples
+
+Real-Life Examples
+- To demonstrate a practical example of the for loop, let's create a program that counts to 100 by tens:
+- Example
+
+public class Main {
+    public static void main(String[] args) { 
+        for (int i = 0; i <= 100; i += 10) {
+            System.out.println(i);
+        }
+    }
+}
+
+- In this example, we create a program that only print even values between 0 and 10:
+- Example
+
+public class Main {
+    public static void main(String[] args) { 
+        for (int i = 0; i <= 10; i = i + 2) {
+            System.out.println(i);
+        }
+    }
+}
+
+- And in this example, we create a program that prints the multiplication table for a specified number:
+- Example
+
+public class Main {
+    public static void main(String[] args) { 
+        int number = 2;
+
+        // Print the multiplication table for the number 2
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(number + " x " + i + " = " + (number * i));
+        }
+    }
+}
+
+- Here is a simple program that prints the seat numbers in a theater row:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        for (int seat = 1; seat <= 5; seat++) {
+            System.out.println("Seat number: " + seat);
+        }
+    }
+}
+
+- Use a loop to calculate the factorial of a given number:
+- Example
+
+public class Main {
+    public static void main(String[] args) { 
+        int n = 5;
+        int fact = 1;
+
+        for (int i = 1; i <= n; i++) {
+            fact *= i;
+        }
+
+        System.out.println("Factorial of " + n + " is " + fact);
+    }
+}
+
+
+- Factorial means multiplying a number by every number below it, down to 1. For example, the factorial of 5 is: 5 * 4 * 3 * 2 * 1 = 120

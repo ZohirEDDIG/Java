@@ -1,0 +1,112 @@
+Java Syntax
+
+Java Syntax
+- In the previous chapter, we created a Java file called Main.java, and we used the following code to print "Hello World" to the screen:
+- Example
+
+Main.java
+
+public class Main {
+      public static void main(string[] args) {
+            System.out.println("Hello World");
+      }
+}
+
+Example explained
+- Every line of code that runs in Java must be inside a class. The class name should always start with an uppercase first letter. In our example, we named the class Main
+- Note: Java is case-sensitive. MyClass and myclass would be treated as two completely different names.
+- The name of the Java file must match the class name. So if your class is called Main, the file must be saved as Main.java. This is because Java uses the class name to find and run your code. If the names don't match, Java will give an error and the program will not run.
+- When saving the file, save it using the class name and add .java to the end of the filename. To run the example above on your computer, make sure that Java is properly installed: Go to the Get Started Chapter for how to install Java. The output should be:
+
+Hello World
+
+The main Method
+- The main() method is required in every Java program. It is where the program starts running:
+
+public static void main(String[] args)
+
+- Any code placed inside the main() method will be executed.
+- For now, you don't need to understand the keywords public, static, and void. You will learn about them later in this tutorial. Just remember: main() is the starting point of every Java program.
+
+System.out.println()
+- Inside the main() method, we can use the println() method to print a line of text to the screen:
+- Example
+
+public class Main {
+      public static void main(String[] args) {
+            System.out.println("Hello World");
+      }
+}
+
+- Note: The curly braces {} mark the beginning and the end of a block of code.
+- System.out.println() may look long, but you can think of it as a single command that means: "Send this text to the screen."
+- Here's what each part means (you will learn the details later):
+--- System is a built-in Java class.
+--- out is a member of System, short for "output".
+--- println() is a method, short for "print line".
+- Finally, remember that each Java statement must end with a semicolon (;).
+
+public class Main {
+- This line defines a class named Main
+- class: means we're creating a blueprint (a container) for code
+- Main: is just the name of the class
+- public: means this class can be accessed from anywhere in the program
+- Think of it like: "Hey Java, here’s a public container called Main where my program lives"
+
+public static void main(String[] args) {
+- This is the main method, where Java starts running your program
+- public: anyone can access it
+- static: belongs to the class , not an object (so Java can run it without creating an object).
+- void: it doesn't return anything
+- String[] args: it can take text (string) inputs from the command line.
+- Think of it like: This is the starting point of the program — begin execution here.
+
+Java Statements
+
+Statements
+- A computer program is a list of "instructions" to be "executed" by a computer.
+- In a programming language, these programming instructions are called statements.
+- The following statement "instructs" the compiler to print the text "Java is fun!" to the screen:
+- Example
+
+public class Main {
+      public static void main(String[] args) {
+            System.out.println("Java is fun!");
+      }
+}
+
+- It is important that you end the statement with a semicolon ;.
+- If you forget the semicolon (;), an error will occur and the program will not run:
+- Example
+
+System.out.println("Java is fun!")
+
+- Result:
+
+error: ';' expected
+
+Many Statements
+- Most Java programs contain many statements.
+- The statements are executed, one by one, in the same order as they are written:
+- Example
+
+public class Main {
+      public static void main(String[] args) {
+            System.out.println("Hello World!");
+            System.out.println("Have a good day!");
+            System.out.println("Learning Java is fun!");
+      }
+}
+
+Example explained
+- From the example above, we have three statements:
+
+System.out.println("Hello World!");
+System.out.println("Have a good day!");
+System.out.println("Learning Java is fun!");
+
+- The first statement is executed first (print "Hello World!" to the screen).
+- Then the second statement is executed (print "Have a good day!" to the screen).
+- And at last, the third statement is executed (print "Learning Java is fun!" to the screen
+
+- You will learn more about statements while reading this tutorial. For now, just remember to always end them with a semicolon to avoid any errors.

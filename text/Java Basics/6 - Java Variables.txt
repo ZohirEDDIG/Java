@@ -1,0 +1,297 @@
+Java Variables
+
+Java Variables
+- Variables are containers for storing data values.
+- In Java, there are different types of variables, for example:
+--- String - stores text, such as "Hello". String values are surrounded by double quotes
+--- int - stores integers (whole numbers), without decimals, such as 123 or -123
+--- float - stores floating point numbers, with decimals, such as 19.99 or -19.99
+--- char - stores single characters, such as 'a' or 'B'. Char values are surrounded by single quotes
+--- boolean - stores values with two states: true or false
+
+Declaring (Creating) Variables
+- To create a variable in Java, you need to:
+--- Choose a type (like int or String)
+--- Give the variable a name (like x, age, or name)
+--- Optionally assign it a value using =
+- Here's the basic syntax:
+- Syntax
+
+type variableName = value;
+
+- For example, if you want to store some text, you can use a String:
+- Example: Create a variable called name of type String and assign it the value "John". Then we use println() to print the name variable:
+
+public class Main {
+    public static void main(String[] args) {
+        String name = "John";
+        System.out.println(name);
+    }
+}
+
+- To create a variable that should store a number, you can use int:
+- Example: Create a variable called myNum of type int and assign it the value 15:
+
+public class Main {
+    public static void main(String[] args) {
+        int myNum = 15;
+        System.out.println(myNum);
+    }
+}
+
+- You can also declare a variable without assigning the value, and assign the value later:
+- You can also declare a variable without assigning the value, and assign the value later:
+
+public class Main {
+    public static void main(String[] args) {
+        int myNum;
+        myNum = 15;
+        System.out.println(myNum);
+    }
+}
+
+- Note that if you assign a new value to an existing variable, it will overwrite the previous value:
+- Example: Change the value of myNum from 15 to 20:
+
+public class Main {
+    public static void main(String[] args) {
+        int myNum = 15;
+        myNum = 20;
+        System.out.println(myNum); // myNum is now 20
+    }
+}
+
+Final Variables
+- If you don't want others (or yourself) to overwrite existing values, use the final keyword (this will declare the variable as "final" or "constant", which means unchangeable and read-only):
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        final int myNum = 15;
+        myNum = 20; // will generate an error
+        System.out.println(myNum);
+    }
+}
+
+Other Types
+- A demonstration of how to declare variables of other types:
+- Example
+
+int myNum = 5;
+float myFloatNum = 5.99f;
+char myLetter = 'D';
+boolean myBool = true;
+String myText = "Hello";
+
+- You will learn more about data types in the next section.
+
+Java Print Variables
+
+Display Variables
+- The println() method is often used to display variables.
+- To combine both text and a variable, use the + character:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        String name = "John";
+        System.out.println("Hello " + name);
+    }
+}
+
+- You can also use the + character to add a variable to another variable:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        String firstName = "John ";
+        String lastName = "Doe";
+        String fullName = firstName + lastName;
+        System.out.println(fullName);  
+    }
+}
+
+- In Java, the + symbol has two meanings:
+- For text (strings), it joins them together (called concatenation).
+- For numbers, it adds values together.
+- For numeric values, the + character works as a mathematical operator (notice that we use int (integer) variables here):
+- Example
+int x = 5;
+int y = 6;
+
+public class Main {
+    public static void main(String[] args) {
+        int x = 5;
+        int y = 6;
+        System.out.println(x + y); // Print the value of x + y
+    }
+}
+
+- From the example above, here's what happens step by step:
+-- x stores the value 5
+--- y stores the value 6
+--- println() displays the result of x + y, which is 11
+
+Mixing Text and Numbers
+- Be careful when combining text and numbers in the same line of code. Without parentheses, Java will treat the numbers as text after the first string:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        int x = 5;
+        int y = 6;
+
+        System.out.println("The sum is " + x + y);   // Prints: The sum is 56
+        System.out.println("The sum is " + (x + y)); // Prints: The sum is 11
+    }
+}
+
+- Explanation:
+--- In the first line, Java combines "The sum is " with x, creating the string "The sum is 5". Then y is added to that string, so it becomes "The sum is 56".
+--- I n the second line, the parentheses make sure x + y is calculated first (resulting in 11), so the output is "The sum is 11".
+
+Java Declare Multiple Variables
+
+Declare Multiple Variables
+- To declare more than one variable of the same type, you can use a comma-separated list:
+- Example: Instead of writing:
+
+int x = 5;
+int y = 6;
+int z = 50;
+System.out.println(x + y + z); // 61
+
+- You can write:
+
+int x = 5, y = 6, z = 50;
+System.out.println(x + y + z); // 61
+
+- Note: Declaring many variables in one line is shorter, but writing one variable per line can sometimes make the code easier to read.
+
+One Value to Multiple Variables
+- You can also assign the same value to multiple variables in one line:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        int x, y, z;
+        x = y = z = 50;
+        System.out.println(x + y + z);
+    }
+}
+
+
+Java Identifiers
+
+Identifiers
+- All Java variables must be identified with unique names.
+- These unique names are called identifiers.
+- Identifiers can be short names (like x and y) or more descriptive names (age, sum, totalVolume).
+- Note: It is recommended to use descriptive names in order to create understandable and maintainable code:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        // Good
+        int minutesPerHour = 60;
+
+        // OK, but not so easy to understand what m actually is
+        int m = 60;
+        
+        System.out.println(minutesPerHour);
+        System.out.println(m);
+    }
+}
+
+- The general rules for naming variables are:
+--- Names can contain letters, digits, underscores, and dollar signs
+--- Names must begin with a letter
+--- Names should start with a lowercase letter, and cannot contain whitespace
+--- Names can also begin with $ and _
+--- Names are case-sensitive ("myVar" and "myvar" are different variables)
+--- Reserved words (like Java keywords, such as int or boolean) cannot be used as names
+
+Invalid Identifiers
+- Here are some examples of invalid identifiers that would cause errors:
+- Example
+
+// Invalid identifiers:
+int 2ndNumber = 5;  // Cannot start with a digit
+int my var = 10;    // Cannot contain spaces
+int int = 20;       // Cannot use reserved keywords
+
+Java Constants (final)
+
+Constants (final keyword)
+- When you do not want a variable's value to change, use the final keyword.
+- A variable declared with final becomes a constant, which means unchangeable and read-only:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        final int myNum = 15;
+        myNum = 20; // will generate an error
+        System.out.println(myNum);
+    }
+}
+
+When to Use final?
+- You should declare variables as final when their values should never change. For example, the number of minutes in an hour, or your birth year:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        final int MINUTES_PER_HOUR = 60;
+        final int BIRTHYEAR = 1980;
+
+        System.out.println(MINUTES_PER_HOUR);
+        System.out.println(BIRTHYEAR);
+    }
+}
+
+- Note: By convention, final variables in Java are usually written in upper case (e.g. BIRTHYEAR). It is not required, but useful for code readability and common for many programmers.
+
+Java Variables - Examples
+
+Real-Life Examples
+- Often in our examples, we simplify variable names to match their data type (myInt or myNum for int types, myChar for char types, and so on). This is done to avoid confusion.
+- However, for a practical example of using variables, we have created a program that stores different data about a college student:
+- Example
+
+public class Main {
+    public static void main(String[] args) {
+        // Student data
+        String studentName = "John Doe";
+        int studentID = 15;
+        int studentAge = 23;
+        float studentFee = 75.25f;
+        char studentGrade = 'B';
+        
+        // Print variables
+        System.out.println("Student name: " + studentName);
+        System.out.println("Student id: " + studentID);
+        System.out.println("Student age: " + studentAge);
+        System.out.println("Student fee: " + studentFee);
+        System.out.println("Student grade: " + studentGrade);
+    }
+}
+
+Calculate the Area of a Rectangle
+- In this real-life example, we create a program to calculate the area of a rectangle (by multiplying the length and width):
+
+public class Main {
+    public static void main(String[] args) {
+        // Create integer variables
+        int length = 4;
+        int width = 6;
+        int area;
+
+        // Calculate the area of a rectangle
+        area = length * width;
+
+        // Print variables
+        System.out.println("Length is: " + length);
+        System.out.println("Width is: " + width);
+        System.out.println("Area of the rectangle is: " + area);
+    }
+}

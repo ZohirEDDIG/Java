@@ -1,0 +1,38 @@
+Java Infos
+
+What is Java?
+- Java is a high-level, object-oriented programming language created by Sun Microsystems (now owned by Oracle) in 1995.
+- It’s designed to be platform-independent, meaning you can write code once and run it anywhere — this is called:
+--- “Write Once, Run Anywhere” (WORA)
+
+How Java Works
+- You write your code in a .java file.
+- The Java Compiler (javac) converts it into bytecode (.class file).
+- The Java Virtual Machine (JVM) runs the bytecode on any operating system.
+
+Main Features
+- Object-Oriented: uses classes, objects, inheritance, etc.
+- Platform-Independent: runs on any OS with JVM.
+- Robust & Secure: strong memory management and security features.
+- Multithreaded: can perform multiple tasks at once.
+- Automatic Garbage Collection: cleans up unused memory automatically.
+
+Basic Building Blocks
+- Class: blueprint of objects
+- Object: instance of a class
+- Method: performs actions
+- Variable: stores data
+
+Common Uses
+- Android app development
+- Web applications (e.g., Spring Framework)
+- Enterprise software
+- Games and desktop apps
+- Backend systems and servers
+
+Example Code
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
