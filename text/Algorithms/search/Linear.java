@@ -13,6 +13,6 @@ public class Linear {
         boolean isOneHundredInNums = linearSearch(new int[] {10, 20, 30, 40, 50}, 100);
         System.out.println(isTenExistsInNums);
         System.out.println(isOneHundredInNums);
-
+        
     }
 }
