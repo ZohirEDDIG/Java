@@ -7,8 +7,8 @@ public class Quick {
         if (nums.length < 2) return nums;
 
         int pivot = nums[nums.length - 1];
-        ArrayList<Integer> left = new ArrayList<>();
-        ArrayList<Integer> right = new ArrayList<>();
+        ArrayList<Integer> left = new ArrayList<Integer>();
+        ArrayList<Integer> right = new ArrayList<Integer>();
 
         for (int i = 0; i < nums.length - 1; i++) {
             if (nums[i] < pivot) {
@@ -18,8 +18,8 @@ public class Quick {
             }
         }
 
-        int[] leftSorted = quickSort(ArrayListToArray(left));
-        int[] rightSorted = quickSort(ArrayListToArray(right));
+        int[] leftSorted = quickSort(arrayListToArray(left));
+        int[] rightSorted = quickSort(arrayListToArray(right));
 
         int[] numsSorted = new int[leftSorted.length + 1 + rightSorted.length];
         System.arraycopy(leftSorted, 0, numsSorted, 0, leftSorted.length);
@@ -30,7 +30,7 @@ public class Quick {
     }
 
 
-    private static int[] ArrayListToArray(ArrayList<Integer> list) {
+    private static int[] arrayListToArray(ArrayList<Integer> list) {
         int[] arr = new int[list.size()];
         for (int i = 0; i < list.size(); i++) {
             arr[i] = list.get(i);
@@ -43,6 +43,5 @@ public class Quick {
         int[] numsSorted = quickSort(new int[] {8, 20, -2, 4, -6});
 
         System.out.println(Arrays.toString(numsSorted));
-
     }
 }
