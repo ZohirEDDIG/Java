@@ -1,6 +1,4 @@
 public class Binary {
-    // Works only if you have a sorted array, else you have to sort the array first
-
     public static boolean binarySearch(int[] nums, int t) {
         int leftIndex = 0;
         int rightIndex = nums.length - 1;
