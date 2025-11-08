@@ -1,7 +1,8 @@
 import java.util.Arrays;
 
 public class Insertion {
-
+    // Insertion Sort
+    // Time Complexity: O(n^2) - Quadratic
     public static int[] insertionSort(int[] nums) {
         for (int i = 1; i < nums.length; i++) {
             int numToInsert = nums[i];
@@ -19,9 +20,9 @@ public class Insertion {
     }
 
     public static void main(String[] args) {
-        int[] numsSorted = insertionSort(new int[] {8, 20, -2, 4, 6});
+        int[] nums = {8, 20, -2, 4, 6};
+        int[] numsSorted = insertionSort(nums);
 
         System.out.println(Arrays.toString(numsSorted));
-
     }
 }

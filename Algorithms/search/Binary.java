@@ -1,5 +1,6 @@
 public class Binary {
-    public static boolean binarySearch(int[] nums, int t) {
+    // Time Complexity: O(log n)
+    public static int binarySearch(int[] nums, int t) {
         int leftIndex = 0;
         int rightIndex = nums.length - 1;
 
@@ -12,16 +13,23 @@ public class Binary {
             } else if (t < middleValue) {
                 rightIndex = middleIndex - 1;
             } else {
-                return true;
+                return middleIndex;
             }
         }
 
-        return false;
+        return -1;
     }
 
     public static void main(String[] args) {
         int[] nums = {1, 3, 5, 7, 9};
-        System.out.println(binarySearch(nums, 5));
-        System.out.println(binarySearch(nums, 8));
+        int t = 19;
+
+        int index = binarySearch(nums, t);
+
+        if (index != -1) {
+            System.out.println("Element found at index: " + index);
+        } else {
+            System.out.println("Element not found");
+        }
     }
 }
