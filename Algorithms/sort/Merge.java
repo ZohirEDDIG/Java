@@ -1,7 +1,6 @@
 import java.util.Arrays;
 
 public class Merge {
-    // Time Complexity: O(n log n)
     public static void mergeSort(int[] nums) {
         int numsLength = nums.length;
         if (numsLength < 2) {

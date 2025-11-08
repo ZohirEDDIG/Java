@@ -1,8 +1,6 @@
 import java.util.Arrays;
 
 public class Insertion {
-    // Insertion Sort
-    // Time Complexity: O(n^2) - Quadratic
     public static int[] insertionSort(int[] nums) {
         for (int i = 1; i < nums.length; i++) {
             int numToInsert = nums[i];

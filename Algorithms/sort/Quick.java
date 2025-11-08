@@ -1,7 +1,6 @@
 import java.util.Arrays;
 
 public class Quick {
-    // Time Complexity: Average O(n log n), Worst O(n^2)
     public static int[] quickSort(int[] nums) {
         quickSort(nums, 0, nums.length - 1);
         return nums;

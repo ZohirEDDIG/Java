@@ -1,8 +1,6 @@
 import java.util.Arrays;
 
 public class Bubble {
-    // Bubble Sort
-    // Time Complexity: O(n^2) - Quadratic
     public static int[] bubbleSort(int[] nums) {
         boolean swapped;
 

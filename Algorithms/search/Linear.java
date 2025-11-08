@@ -1,5 +1,4 @@
 public class Linear {
-    // Time complexity: O(n)
     public static int linearSearch(int[] nums, int t) {
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] == t) {
@@ -21,6 +20,5 @@ public class Linear {
         } else {
             System.out.println("Element not found");
         }
-        
     }
 }

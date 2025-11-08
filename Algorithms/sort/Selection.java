@@ -1,7 +1,6 @@
 import java.util.Arrays;
 
 public class Selection {
-    // Time Complexity: O(n^2) - Quadratic
     public static int[] selectionSort(int[] nums) {
         for (int i = 0; i < nums.length - 1; i++) {
             int minIndex = i;

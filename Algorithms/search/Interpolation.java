@@ -1,12 +1,10 @@
 public class Interpolation {
-    // Time Complexity: O(log(log(n))) for uniformly distributed data(data that increases at a constant rate)
-    // Time Complexity: O(n) [for non-uniform data
     public static int interpolationSearch(int[] nums, int t) {
         int leftIndex = 0;
         int rightIndex = nums.length - 1;
 
         while (leftIndex <= rightIndex && t >= nums[leftIndex] && t <= nums[rightIndex]) {
-            int pos = leftIndex + (leftIndex + rightIndex) * (t * nums[leftIndex]) / (nums[rightIndex] - nums[leftIndex]);
+            int pos = leftIndex + ((t - nums[leftIndex]) * (rightIndex - leftIndex)) / (nums[rightIndex] - nums[leftIndex]);
 
             if (t == nums[pos]) {
                 return pos;

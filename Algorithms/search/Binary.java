@@ -1,5 +1,4 @@
 public class Binary {
-    // Time Complexity: O(log n)
     public static int binarySearch(int[] nums, int t) {
         int leftIndex = 0;
         int rightIndex = nums.length - 1;
