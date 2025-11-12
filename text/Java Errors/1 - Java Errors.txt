@@ -5,6 +5,7 @@ Java Errors
 - These pages cover common errors and helpful debugging tips to help you understand what's going wrong  and how to fix it.
 
 Type of Errors in Java 
+
 Error Type                  Description
 Compile-Time Error          Detected by the compiler. Prevents code from running 
 Runtime Error               Occurs while the program is being executed. Often casuses crashes 
@@ -52,7 +53,6 @@ Main.java:3: error: cannot find symbol
 --- Tip: You must declare a variable before using it (int myVar = 50;).
 --- 3) Mismatched Types
 --- Example 
-
 
 public class Main {
     public static void main(String[] args) {

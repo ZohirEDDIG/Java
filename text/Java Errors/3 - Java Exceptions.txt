@@ -117,12 +117,13 @@ public class Main {
     } 
 }
 
--   The output will be:
+- The output will be:
 
 Access granted - You are old enough!
 
 Errors and Exception Types
 - The table below shows some of the most common errors and exceptions in Java, with a short description of each:
+
 Error/Exception	                Description
 ArithmeticError	Occurs          when a numeric calculation goes wrong
 ArrayIndexOutOfBoundsException	Occurs when trying to access an index number that does not exist in an array
@@ -133,4 +134,5 @@ IOException	Occurs              when an input or output operation fails
 NullPointerException	        Occurs when trying to access an object referece that is null
 NumberFormatException	        Occurs when it is not possible to convert a specified string to a numeric type
 StringIndexOutOfBoundsException	Occurs when trying to access a character in a String that does not exist
+
 - Tip: For a list of all errors and exception types, go to our Java Errors and Exception Types Reference.

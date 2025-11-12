@@ -32,7 +32,7 @@ import java.io.IOException;
 
 public clas Main {
     public static void main(String[] args) {
-        // resource is opened inside try(
+        // resource is opened inside try()
         try (FileOutputStream output = new FileOutputStream("filename.txt");) {
             output.write("Hello".getBytes());
             // no need to call close() here
