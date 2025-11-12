@@ -1,34 +1,28 @@
 package models;
 
 public class Car {
-    final private String brand;
-    final private String model;
-    final private int year;
-    final private double pricePerDay;
-    private boolean available;
+    final protected int id;
+    final protected String brand;
+    final protected String model;
+    protected boolean available;
 
-    public Car(String brand, String model, int year, double pricePerDay) {
+    public Car(int id, String brand, String model) {
+        this.id = id;
         this.brand = brand;
         this.model = model;
-        this.year = year;
-        this.pricePerDay = pricePerDay;
         this.available = true;
     }
 
+    public int getId() {
+        return this.id;
+    }
+
     public String getBrand() {
-        return brand;
+        return this.brand;
     }
 
     public String getModel() {
-        return model;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public double getPricePerDay() {
-        return this.pricePerDay;
+        return this.model;
     }
 
     public boolean getAvailable() {
@@ -40,6 +34,6 @@ public class Car {
     }
 
     public void displayInfo() {
-        System.out.println(this.brand + " " + this.model + " (" + this.year + ") - $" + this.pricePerDay + "/day");
+        System.out.println("Id: " + this.id + " - " + this.brand + " " + this.model + (this.available ? " Available" : " Not available"));
     }
 }

@@ -3,14 +3,13 @@ package models;
 public class SportsCar extends Car {
     final private int horsePower;
 
-    public SportsCar(String brand, String model, int year, double pricePerDay, int horsePower) {
-        super(brand, model, year, pricePerDay);
+    public SportsCar(int id, String brand, String model, int horsePower) {
+        super(id, brand, model);
         this.horsePower = horsePower;
     }
 
     @Override
     public void displayInfo() {
-        System.out.println(this.getBrand() + " " + this.getModel() + " (" + this.getYear() + ") - " +
-        this.horsePower + " HP - $" + this.getPricePerDay() + "/day");
+        System.out.println("Id: " + this.id + " - " + this.brand + " " + this.model + " Horse Power " + this.horsePower + " HP" + (this.available ? " Available" : " Not available"));
     }
 }
