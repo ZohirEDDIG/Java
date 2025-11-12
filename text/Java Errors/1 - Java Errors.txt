@@ -1,0 +1,134 @@
+Java Errors 
+
+Java Errors 
+- Even experienced Java developers make mistakes. The key is learning how to spot and fix them!
+- These pages cover common errors and helpful debugging tips to help you understand what's going wrong  and how to fix it.
+
+Type of Errors in Java 
+Error Type                  Description
+Compile-Time Error          Detected by the compiler. Prevents code from running 
+Runtime Error               Occurs while the program is being executed. Often casuses crashes 
+Logical Error               Code runs but gives incorrect results. Hardest to find.
+
+Common Compile-Time Errors 
+- Compile time errors occur when the program cannot compile due to syntax and type issues.
+- Here are some examples
+--- 1) Missing Semicolon 
+--- Example 
+
+public class Main {
+    public static void main(String[] args) {
+        int x = 5
+        System.out.println(x);
+    }
+}
+
+--- Result:
+
+Main.java:3: error: ';' expected
+    int x = 5
+             ^
+1 error
+
+--- Tip: Java requires a semicolon at the end of every statement (int x = 5;).
+--- 2) Undeclared Variables
+--- Example 
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(myVar);
+    }
+}
+
+--- Result:
+
+Main.java:3: error: cannot find symbol
+    System.out.println(myVar);
+                       ^
+  symbol:   variable myVar
+  location: class Main
+1 error
+
+--- Tip: You must declare a variable before using it (int myVar = 50;).
+--- 3) Mismatched Types
+--- Example 
+
+
+public class Main {
+    public static void main(String[] args) {
+        int x = "Hello";
+        System.out.println(x);
+    }
+}
+
+--- Result:
+
+Main.java:3: error: incompatible types: String cannot be converted to int
+    int x = "Hello";
+            ^
+1 error
+
+--- Tip: To make sure the value matches the variable type (String x = "Hello";).
+
+Common Runtime Errors
+- Runtime errors occur when the program compiles but crashes or behaves unexpectedly.
+- Here are some examples:
+--- 1) Division by Zero
+--- Example 
+
+public class Main {
+    public static void main(String[] args) {
+        int x = 10;
+        int y = 0;
+        int result = x / y;
+        System.out.println(result);
+    }
+}
+
+--- Result:
+
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+	at Main.main(Main.java:5)
+
+--- 2) Array Index Out of Bounds 
+--- Example
+
+public class Main {
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3};
+        System.out.println(numbers[8]);
+    }
+}
+
+--- Result:
+
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 8 out of bounds for length 3
+	at Main.main(Main.java:4)
+
+Logical Errors
+- Logical errors happen when the code runs, but the result is not what you tought:
+- Example:
+
+public class Main {
+    public static void main(String[] args) {
+        int x = 10;
+        int y = 2;
+        int sum = x - y;
+        System.out.println("x + y = " + sum);
+    }
+}
+
+- Result:
+
+x + y = 8
+
+- Expected Result: 12
+- Logical Error: The code mistakenly subtracts instead of adds.
+- Tip: Test your program with different inputs to catch logic flaws (try using x + y instead). This is a part of debugging, which you will learn more about in the next chapter.
+
+Good Habits to Avoid Errors 
+- Use meaningful variable names 
+- Read the error message carefully. What lines does it mention?
+- Check for missing semicolons or braces 
+- Look for typos io variable or method names
+- In the next chapter, you will learn how to debug your code - how to find and fix bugs/errors in your program.  
