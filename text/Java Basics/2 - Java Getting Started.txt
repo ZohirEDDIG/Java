@@ -42,9 +42,9 @@ Java Quickstart
 Main.java
 
 public class Main {
-      public static void main(String[] args) {
-            System.out.println("Hello World");
-      }
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
 }
 
 - Don't worry if you don't understand the code above - we will discuss it in detail in later chapters. For now, focus on how to run the code above.
@@ -60,4 +60,4 @@ java Main.java
 
 Hello World
 
-Congratulations! You have written and executed your first Java program.
+- Congratulations! You have written and executed your first Java program.

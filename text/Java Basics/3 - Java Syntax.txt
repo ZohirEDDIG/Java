@@ -7,9 +7,9 @@ Java Syntax
 Main.java
 
 public class Main {
-      public static void main(string[] args) {
-            System.out.println("Hello World");
-      }
+    public static void main(string[] args) {
+        System.out.println("Hello World");
+    }
 }
 
 Example explained
@@ -33,9 +33,9 @@ System.out.println()
 - Example
 
 public class Main {
-      public static void main(String[] args) {
-            System.out.println("Hello World");
-      }
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
 }
 
 - Note: The curly braces {} mark the beginning and the end of a block of code.

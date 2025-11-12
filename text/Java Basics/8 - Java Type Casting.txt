@@ -23,7 +23,6 @@ public class Main {
     }
 }
 
-
 Narrowing Casting
 - Narrowing casting must be done manually by placing the type in parentheses () in front of the value.
 - This is required because narrowing may result in data loss (for example, dropping decimals when converting a double to an int):
@@ -59,4 +58,3 @@ public class Main {
         System.out.println("User's percentage is " + percentage);
     }
 }
-

@@ -71,8 +71,7 @@ The Do/While Loop
 
 do {
     // code block to be executed
-}
-while (condition);
+} while (condition);
 
 - Note: The semicolon ; after the while condition is required!
 - Example: 
