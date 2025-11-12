@@ -21,7 +21,7 @@ public class Main {
         Matcher matcher = pattern.matcher("Visit W3Schools!");
         boolean matchFound = matcher.find()
 
-        if(matchFound) {
+        if (matchFound) {
             System.out.println("Match found");
         } else {
             System.out.println("Match not found");
@@ -52,7 +52,6 @@ Expression	Description
 
 Metacharacters
 - Metacharacters are characters with a special meaning:
-
 
 Metacharacter	Description
 |	            Find a match for any one of the patterns separated by | as in: cat|dog|fish
