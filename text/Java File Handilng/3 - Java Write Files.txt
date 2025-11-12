@@ -1,0 +1,87 @@
+Java Write To Files
+
+Write To a File
+- If you are just starting with Java, the easiest way to write text to a file is by using the FileWriter class.
+- In the example below, we use FileWriter together with its write() method to create and write some text into a file.
+- Note: When you are done, you should close the writer with the close() method:
+- Example
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class WriteToFile {
+    public static void main(String[] args) {
+        try {
+            FileWriter myWriter = new FileWriter("filename.txt");
+            myWriter.write("Files in Java might be tricky, but it is fun enough!");
+            myWriter.close();
+            System.out.println("Successfully wrote to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+}
+
+- The output will be:
+
+Successfully wrote to the file.
+
+Write To a File with try-with-resources
+- Since Java 7, you can use try-with-resources. This makes sure the writer is closed automatically, even if an error occurs:
+- Example
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class WriteToFile {
+    public static void main(String[] args) {
+        // FileWriter will be closed automatically here
+        try (FileWriter myWriter = new FileWriter("filename.txt")) {
+            myWriter.write("Files in Java might be tricky, but it is fun enough!");
+            System.out.println("Successfully wrote to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+}
+
+- The output will be:
+
+Successfully wrote to the file.
+
+Append to a File
+- Normally, FileWriter will overwrite a file if it already exists. If you want to add new content at the end of the file (without deleting what's already there), you can use the two-argument constructor and pass true as the second parameter. This puts the writer into append mode:
+- Example
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class AppendToFile {
+    public static void main(String[] args) {
+        // true = append mode
+        try (FileWriter myWriter = new FileWriter("filename.txt", true)) {
+            myWriter.write("\nAppended text!");
+            System.out.println("Successfully appended to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+}
+
+- The output will be:
+
+Successfully wrote to the file.
+
+- Explanation: This program adds the text "Appended text!" to the end of filename.txt instead of replacing the file's content.
+- Note: If the file does not already exist, Java will create it before appending.
+- Tip: To see what's inside the file, go to the Java Read Files chapter.
+
+Other Ways to Write to Files
+- There are several classes you can use to write files in Java:
+--- FileWriter - easiest choice for basic text.
+--- BufferedWriter - better for large text files, because it is faster and supports handy features.
+--- FileOutputStream - best for binary data (images, audio, PDFs)
+- You will learn more about FileOutputStream and BufferedWriter in a later chapter.
