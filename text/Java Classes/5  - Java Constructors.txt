@@ -46,8 +46,7 @@ public class Main {
 - You can have as many parameters as you want:
 - Example
 
-Main.java
-
+// filename: Main.java
 public class Main {
     int modelYear;
     String modelName;

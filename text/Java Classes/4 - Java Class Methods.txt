@@ -97,9 +97,9 @@ javac Second.java
 
 - Run the Second.java file:
 
-Run the Second.java file:
+java Second
 
-And the output will be:
+- And the output will be:
 
 The car is going as fast as it can!
 Max speed is: 200

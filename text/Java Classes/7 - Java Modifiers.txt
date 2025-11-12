@@ -7,9 +7,8 @@ public class Main
 
 - The public keyword is an access modifier, meaning that it is used to set the access level for classes, attributes, methods and constructors.
 - We divide modifiers into two groups:
-
-Access Modifiers - controls the access level
-Non-Access Modifiers - do not control access level, but provides other functionality
+--- Access Modifiers - controls the access level
+--- Non-Access Modifiers - do not control access level, but provides other functionality
 
 Access Modifiers
 - For classes, you can use either public or default:
@@ -124,7 +123,8 @@ class Second {
     }
 }
 
-For classes, you can use either final or abstract:
+Non-Access Modifiers List
+- For classes, you can use either final or abstract:
 
 Modifier	Description
 final	    The class cannot be inherited by other classes (You will learn more about inheritance in the Inheritance chapter)	

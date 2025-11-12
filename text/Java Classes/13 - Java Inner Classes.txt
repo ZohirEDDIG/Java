@@ -28,9 +28,9 @@ Private Inner Class
 class OuterClass {
     int x = 10;
 
-        private class InnerClass {
-            int y = 5;
-        }
+    private class InnerClass {
+        int y = 5;
+    }
 }
 
 public class Main {

@@ -118,7 +118,7 @@ enum Level {
         this.description = description;
     }
 
-  // Getter method to read the description
+    // Getter method to read the description
     public String getDescription() {
         return description;
     }
