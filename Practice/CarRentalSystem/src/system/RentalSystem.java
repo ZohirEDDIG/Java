@@ -111,22 +111,59 @@ public class RentalSystem {
     }
 
     private static void showAllCars() {
-        System.out.println("All cars:");
+        ArrayList<Car> allCars = new ArrayList<Car>();
         for (Car car: cars) {
+            allCars.add(car);
+        }
+
+        if (allCars.size() == 0) {
+            System.out.println("No cars in the system right now!");
+            showSystemMenu();
+            return;
+        }
+
+        System.out.println("All the cars in the system:");
+        for (Car car: allCars) {
             car.displayInfo();
         }
     }
 
-    private static void showAvailableCars() {
-        System.out.println("Available cars:");
+    private static ArrayList<Car> returnAvailableCars() {
+        ArrayList<Car> availableCars = new ArrayList<Car>();
         for (Car car: cars) {
             if (car.getAvailable()) {
-                car.displayInfo();
+                availableCars.add(car);
             }
+        }
+
+
+        return availableCars;
+    }
+
+    private static void showAvailableCars() {
+        ArrayList<Car> availableCars = returnAvailableCars();
+
+        if (availableCars.size() == 0) {
+            System.out.println("No cars are available in the system right now!");
+            showSystemMenu();
+            return;
+        }
+
+        System.out.println("Available cars in the system:");
+        for (Car car: availableCars) {
+            car.displayInfo();
         }
     }
 
     private static void rentCar() {
+        ArrayList<Car> availableCars = returnAvailableCars();
+
+        if (availableCars.size() == 0) {
+            System.out.println("No cars are available in the system right now!");
+            showSystemMenu();
+            return;
+        }
+
         showAvailableCars();
         System.out.print("Enter the ID of the car you want to rent: ");
 
@@ -158,12 +195,58 @@ public class RentalSystem {
     }
 
     public static void showYourRentals() {
+        if (currentCustomer.getRentedCars().size() == 0) {
+            System.out.println("Your are not renting any car");
+            showSystemMenu();
+            return;
+        }
+
         System.out.println("Cars rented by you: ");
         for (Car car: currentCustomer.getRentedCars()) {
             car.displayInfo();
         }
     }
 
+    public static void returnCar() {
+        if (currentCustomer.getRentedCars().size() == 0) {
+            System.out.println("Your are not renting any car to return it");
+            showSystemMenu();
+            return;
+        }
+
+        System.out.println("These are all the cars rented by you: ");
+        for (Car car: currentCustomer.getRentedCars()) {
+            car.displayInfo();
+        }
+
+        System.out.println("Enter the ID of the car you want to return: ");
+
+        boolean isError;
+        do {
+            isError = false;
+            try {
+                int carId = scanner.nextInt();
+                scanner.nextLine();
+
+                for (Car car: currentCustomer.getRentedCars()) {
+                    if (car.getId() == carId) {
+                        currentCustomer.getRentedCars().remove(car);
+                        car.setAvailable(true);
+                        System.out.println(currentCustomer.getUsername() + " has returned successfully " + car.getBrand() + " " + car.getModel());
+                        showSystemMenu();
+                        return;
+                    }
+                }
+
+                System.out.println("Invalid car ID.");
+                isError = true;
+            } catch (Exception e) {
+                System.out.println("Invalid input.");
+                isError = true;
+                scanner.nextLine();
+            }
+        } while (isError);
+    }
 
     private static void showSystemMenu() {
         System.out.println("What would you like to do?");
@@ -193,6 +276,7 @@ public class RentalSystem {
                         rentCar();
                         break;
                     case 4:
+                        returnCar();
                         break;
                     case 5:
                         showYourRentals();
