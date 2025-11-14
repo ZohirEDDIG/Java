@@ -29,6 +29,6 @@ public class Interpolation {
             System.out.println("Element found at index: " + index);
         } else {
             System.out.println("Element not found");
-        }System.out.println();
+        }
     }
 }
