@@ -36,18 +36,26 @@ public class Merge {
 
         while (l < leftLength && r < rightLength) {
             if (leftNums[l] <= rightNums[r]) {
-                nums[i++] = leftNums[l++];
+                nums[i] = leftNums[l];
+                i++;
+                l++;
             } else {
-                nums[i++] = rightNums[r++];
+                nums[i] = rightNums[r];
+                i++;
+                r++;
             }
         }
 
         while (l < leftLength) {
-            nums[i++] = leftNums[l++];
+            nums[i] = leftNums[l];
+            i++;
+            l++;
         }
 
         while (r < rightLength) {
-            nums[i++] = rightNums[r++];
+            nums[i] = rightNums[r];
+            i++;
+            r++;
         }
     }
 
