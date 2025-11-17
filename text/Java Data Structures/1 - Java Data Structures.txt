@@ -1,0 +1,110 @@
+Java Data Structures 
+
+Java Data Structures
+- Data structures are ways to store and organize data so you can use it efficiently.
+- An array is an example of a data structure, which allows multiple elements to be stored in a single variable.
+- Java includes many other data structures as well, in the java.util package. Each used to handle data in different ways.
+- Some of the most common are:
+--- ArrayList
+--- HashSet 
+--- HashMap
+- Tip: Data structure are like supercharged arrays - more flexible and feature-rich!
+- We'll explore all of these - and many more - in detail later, but for now, here's a quick introduction to each one.
+
+ArrayList
+- An ArrayList is a resizable array that can grows as needed.
+- It allows you to store elements and access them by index.
+- Example
+
+// Import the ArrayList class
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> cars = new ArrayList<String>();
+        cars.add("Volvo");
+        cars.add("BMW");
+        cars.add("Ford");
+        cars.add("Mazda");
+        System.out.println(cars);
+    }
+}
+
+HashSet
+- A HashSet is a collection where every element is unique - no duplicates are allowed.
+- Example
+
+// Import the HashSet class
+import java.util.HashSet;
+
+public class Main {
+    public static void main(String[] args) {
+        HashSet<String> cars = new HashSet<String>();
+        cars.add("Volvo");
+        cars.add("BMW");
+        cars.add("Ford");
+        cars.add("BMW");  // Duplicate
+        cars.add("Mazda");
+        System.out.println(cars);
+    }
+}
+
+- Note: In the example above, even though BMW is added twice it only appears once in the set because every element in a set has to be unique.
+
+HashMap
+- A HashMap stores key-value pairs, which are great when you want to store values and find them by a key (like a name or ID):
+- Example
+
+// Import the HashMap class
+import java.util.HashMap;
+
+public class Main {
+    public static void main(String[] args) {
+        // Create a HashMap object called capitalCities
+        HashMap<String, String> capitalCities = new HashMap<String, String>();
+
+        // Add keys and values (Country, City)
+        capitalCities.put("England", "London");
+        capitalCities.put("Germany", "Berlin");
+        capitalCities.put("Norway", "Oslo");
+        capitalCities.put("USA", "Washington DC");
+        System.out.println(capitalCities);
+    }
+}
+
+Data Structures Overview
+
+Data Structure	Stores	            Keeps Order?	Allows Duplicates?	    Best For
+ArrayList	    Ordered elements	Yes	            Yes	                    Accessing elements by index
+HashSet	        Unique elements	    No	            No	                    Avoiding duplicates, fast checks
+HashMap	        Key-value pairs	    No	            Yes (keys are unique)	Fast lookup by key
+
+Iterators
+- When learning about data structures, you will often hear about iterators too.
+- An iterator is a way to loop through elements in a data structure.
+- It is called an "iterator" because "iterating" is the technical term for looping.
+- Example: Using an Iterator with ArrayList:
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class Main {
+    public static void main(String[] args) {
+        // Create an ArrayList of Strings
+        ArrayList<String> cars = new ArrayList<String>();
+        cars.add("Volvo");
+        cars.add("BMW");
+        cars.add("Ford");
+        cars.add("Mazda");
+
+        // Get an iterator for the ArrayList
+        Iterator<String> it = cars.iterator();
+
+        // Iterate through the list using the iterator
+        while(it.hasNext()) {
+            System.out.println(it.next());
+        }
+    }
+}
+
+- Next, let's take a closer look at each data structure in more detail.

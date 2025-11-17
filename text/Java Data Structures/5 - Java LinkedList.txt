@@ -1,0 +1,80 @@
+Java LinkedList
+
+Java LinkedList
+- In the previous chapter, you learned about the ArrayList class. The LinkedList class is almost identical to the ArrayList:
+- Example
+
+import java.util.LinkedList;
+
+public class Main { 
+    public static void main(String[] args) { 
+        LinkedList<String> cars = new LinkedList<String>();
+        cars.add("Volvo");
+        cars.add("BMW");
+        cars.add("Ford");
+        cars.add("Mazda");
+        System.out.println(cars);
+    } 
+}
+
+ArrayList vs. LinkedList
+- The LinkedList class is a collection which can contain many objects of the same type, just like the ArrayList.
+- The LinkedList class has the same methods as ArrayList because both follow the List interface. This means you can add, change, remove, or clear elements in a LinkedList just like you would with an ArrayList.
+- However, while the ArrayList class and the LinkedList class can be used in the same way, they are built very differently.
+
+How the ArrayList works
+- The ArrayList class has a regular array inside it. When an element is added, it is placed into the array. 
+- If the array is not big enough, a new, larger array is created to replace the old one and the old one is removed.
+
+How the LinkedList works
+- The LinkedList stores its elements in "containers." The list has a link to the first container and each container has a link to the next container in the list. 
+- To add an element to the list, the element is placed into a new container and that container is linked to one of the other containers in the list.
+
+When To Use
+- Use an ArrayList for storing and accessing data, and LinkedList to manipulate data.
+
+LinkedList Methods
+- For many cases, the ArrayList is more efficient as it is common to need access to random elements in the list, but the LinkedList provides several methods to do certain operations more efficiently:
+
+Method	            Description	Try it
+addFirst()	        Adds an element to the beginning of the list	
+addLast()	        Add an element to the end of the list	
+removeFirst()	    Remove an element from the beginning of the list	
+removeLast()	    Remove an element from the end of the list	
+getFirst()	        Get the element at the beginning of the list	
+getLast()	        Get the element at the end of the list
+
+The var Keyword
+- From Java 10, you can use the var keyword to declare a LinkedList variable without writing the type twice. The compiler figures out the type from the value you assign.
+- This makes code shorter, but many developers still use the full type for clarity. Since var is valid Java, you may see it in other code, so it's good to know that it exists:
+- Example
+
+import java.util.LinkedList;
+
+public class Main { 
+    public static void main(String[] args) {
+        // Using var instead of 
+        // LinkedList<String> cars = new LinkedList<String>();
+        var cars = new LinkedList<String>(); // using var
+        cars.add("Volvo");
+        cars.add("BMW");
+        cars.add("Ford");
+        cars.add("Mazda");
+        System.out.println(cars);
+    } 
+}
+
+
+The List Interface
+- Note: Sometimes you will see both List and LinkedList in Java code, like this:
+
+import java.util.List;
+import java.util.LinkedList;
+
+List<String> cars = new LinkedList<>()
+
+- This means the variable (cars) is declared as a List (the interface), but it stores a LinkedList object (the actual list). Since LinkedList implements the List interface, this is possible.
+- It works the same way, but some developers prefer this style because it gives them more flexibility to change the type later.
+
+Complete LinkedList Reference
+- For a complete reference of LinkedList methods, go to our Java LinkedList Reference.
