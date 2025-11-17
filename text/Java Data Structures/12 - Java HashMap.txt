@@ -185,9 +185,7 @@ Other Types
 - In the examples above, we used objects of type "String". 
 - Remember that a String in Java is an object (not a primitive type). 
 - To use other types, such as int, you must specify an equivalent wrapper class: Integer. For other primitive types, use: Boolean for boolean, Character for char, Double for double, etc:
-
-Example
-- Create a HashMap object called people that will store String keys and Integer values:
+- Example: Create a HashMap object called people that will store String keys and Integer values:
 
 // Import the HashMap class
 import java.util.HashMap;

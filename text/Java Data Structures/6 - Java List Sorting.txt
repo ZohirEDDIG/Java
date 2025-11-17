@@ -1,0 +1,98 @@
+Java List Sorting
+
+Java Sort a List
+- In the previous chapters, you learned how to use two popular lists in Java: ArrayList and LinkedList, which are found in the java.util package.
+- Another useful class in the java.util package is the Collections class, which include the sort() method for sorting lists alphabetically or numerically.
+
+Sort an ArrayList
+- Sort an ArrayList of Strings alphabetically in ascending order:
+- Example
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Main {
+  public static void main(String[] args) {
+    ArrayList<String> cars = new ArrayList<String>();
+    cars.add("Volvo");
+    cars.add("BMW");
+    cars.add("Ford");
+    cars.add("Mazda");
+
+    Collections.sort(cars);
+
+    for (String i : cars) {
+      System.out.println(i);
+    }
+  }
+}
+
+- Sort an ArrayList of Integers numerically in ascending order:
+- Example
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Main { 
+    public static void main(String[] args) { 
+        ArrayList<Integer> myNumbers = new ArrayList<Integer>();
+        myNumbers.add(33);
+        myNumbers.add(15);
+        myNumbers.add(20);
+        myNumbers.add(34);
+        myNumbers.add(8);
+        myNumbers.Exampleadd(12);
+
+        Collections.sort(myNumbers);
+
+        for (int i : myNumbers) {
+            System.out.println(i);
+        }
+    } 
+}
+
+Reverse the Order
+- You can also sort a list in reverse order, by using the reverseOrder() method.
+- In the following example, we sort an ArrayList of Strings alphabetically in reverse/descending order:
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Main { 
+    public static void main(String[] args) { 
+        ArrayList<String> cars = new ArrayList<String>();
+        cars.add("Volvo");
+        cars.add("BMW");
+        cars.add("Ford");
+        cars.add("Mazda");
+        
+        Collections.sort(cars, Collections.reverseOrder()); // Sort myNumbers
+
+        for (String i : cars) {
+            System.out.println(i);
+        }
+    } 
+}
+
+- Sort an ArrayList of Integers numerically in reverse/descending order:
+
+import java.util.ArrayList;
+import java.util.Collections;  // Import the Collections class
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<Integer> myNumbers = new ArrayList<Integer>();
+        myNumbers.add(33);
+        myNumbers.add(15);
+        myNumbers.add(20);
+        myNumbers.add(34);
+        myNumbers.add(8);
+        myNumbers.add(12);
+
+        Collections.sort(myNumbers, Collections.reverseOrder());
+
+        for (int i : myNumbers) {
+            System.out.println(i);
+        }
+    }
+}

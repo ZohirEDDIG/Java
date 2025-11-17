@@ -40,6 +40,7 @@ public class Main() {
 }
 
 Stack Implementation Using Array (Manual Implementation)
+- Example
 
 class MyStack {
     int[] arr;
@@ -102,6 +103,7 @@ public class StackArrayDemo {
 }
 
 Stack Implementation Using Linked List
+- Example
 
 class Node {
     int data;

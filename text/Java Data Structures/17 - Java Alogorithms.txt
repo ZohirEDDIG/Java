@@ -1,0 +1,192 @@
+Java Algorithms
+
+Java Algorithms
+- In the previous chapters, you learned how data structures (like ArrayList, HashMap, etc.) are used to store and organize data.
+- Algorithms are used to solve problems by sorting, searching, and manipulating data structures.
+- In Java, many useful algorithms are already built into the Collections class (found in the java.util package), so you don't have to write them from scratch.
+
+Searching
+- To find elements in a list, Java provides helper methods. The most common is Collections.binarySearch(), which searches in a sorted list:
+- Example: Search for an element in a sorted ArrayList:
+
+import java.util.*; // Import both ArrayList and Collections
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> names = new ArrayList<>();
+        names.add("Liam");
+        names.add("Jenny");
+        names.add("Kasper");
+        names.add("Angie");
+
+        Collections.sort(names); // must be sorted first
+        int index = Collections.binarySearch(names, "Angie");
+        System.out.println("Angie is at index: " + index);
+    }
+}
+
+Sorting
+- Sorting is one of the most common algorithms. With ArrayList, you can use Collections.sort() to sort the elements:
+- Example: Sort a list of numbers:
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<Integer> numbers = new ArrayList<>();
+        numbers.add(5);
+        numbers.add(1);
+        numbers.add(7);
+        numbers.add(3);
+        numbers.add(9);
+
+        Collections.sort(numbers);
+        System.out.println(numbers); // [1, 3, 5, 7, 9]
+    }
+}
+
+- You can also sort in reverse order with Collections.sort(list, Collections.reverseOrder()):
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<Integer> numbers = new ArrayList<>();
+        numbers.add(5);
+        numbers.add(1);
+        numbers.add(7);
+        numbers.add(3);
+        numbers.add(9);
+
+        Collections.sort(numbers, Collections.reverseOrder());
+        System.out.println(numbers);
+    }
+}
+
+Iterating
+- Iterating (looping) through elements is another common algorithm. You can use the for-each loop or the Iterator interface:
+- Example: Loop through an ArrayList using for-each:
+
+import java.util.*; 
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> colors = new ArrayList<>();
+        colors.add("Red");
+        colors.add("Green");
+        colors.add("Blue");
+
+        for (String c : colors) {
+            System.out.println(c);
+        }
+    }
+}
+
+Example
+- Loop through an ArrayList using an Iterator:
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> colors = new ArrayList<>();
+        colors.add("Red");
+        colors.add("Green");
+        colors.add("Blue");
+
+        Iterator<String> it = colors.iterator();
+        while (it.hasNext()) {
+            System.out.println(it.next());
+        }
+    }
+}
+
+Other Useful Algorithms
+- The Collections class contains many more algorithms, such as:
+--- Collections.max() - find the largest element
+--- Collections.min() - find the smallest element
+--- Collections.shuffle() - randomly shuffle elements
+--- Collections.frequency() - count how many times an element appears
+--- Collections.swap() - swap two elements in a list
+- In this example, we use Collections.max() and Collections.min() to find the largest and smallest element in an ArrayList:
+- Example
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<Integer> numbers = new ArrayList<>();
+        numbers.add(5);
+        numbers.add(1);
+        numbers.add(7);
+        numbers.add(3);
+        numbers.add(9);
+
+        System.out.println("Max: " + Collections.max(numbers));
+        System.out.println("Min: " + Collections.min(numbers));
+    }
+}
+
+- Randomly shuffle an ArrayList:
+- Example
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> cards = new ArrayList<>();
+        cards.add("Ace");
+        cards.add("King");
+        cards.add("Queen");
+        cards.add("Jack");
+
+        Collections.shuffle(cards);
+        System.out.println(cards);
+    }
+}
+
+
+- Collections.frequency() counts how many times an element appears in a list:
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> fruits = new ArrayList<>();
+        fruits.add("Apple");
+        fruits.add("Banana");
+        fruits.add("Orange");
+        fruits.add("Banana");
+        fruits.add("Mango");
+
+        int count = Collections.frequency(fruits, "Banana");
+        System.out.println("Banana appears: " + count + " times");
+    }
+}
+
+- Collections.swap() swaps two elements in a list:
+- Example 
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> fruits = new ArrayList<>();
+        fruits.add("Apple");
+        fruits.add("Banana");
+        fruits.add("Orange");
+        fruits.add("Mango");
+
+        Collections.swap(fruits, 0, 2); // Swap first and third element
+        System.out.println(fruits);
+    }
+}
+
+Summary
+- An algorithm is a procedure to solve a problem.
+- Java provides built-in algorithms in the Collections class.
+- Common algorithms include searching, sorting, iterating, and finding min/max.
+- Algorithms work together with data structures (like ArrayList, HashSet, etc.) to make your programs more powerful and efficient.
+
+Complete Collections Reference
+- For a complete reference of all Collections methods, go to our Java Collections Reference.
