@@ -1,0 +1,63 @@
+Java BufferedWriter
+
+BufferedWriter
+- The BufferedWriter class is used to write text to a file, one line or one string at a time. If the file already exists, its contents will be replaced (overwritten).
+
+Write to a Text File
+- Use BufferedWriter with FileWriter to write text to a file. The write() method adds text, and you can use newLine() to insert a line break:
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Main {
+    public static void main(String[] args) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("filename.txt"))) {
+            bw.write("First line");
+            bw.newLine();  // add line break
+            bw.write("Second line");
+            System.out.println("Successfully wrote to the file.");
+        } catch (IOException e) {
+            System.out.println("Error writing file.");
+        }
+    }
+}
+
+- The output will be:
+
+Successfully wrote to the file
+
+- Explanation: This program creates (or overwrites) filename.txt and writes two lines of text into it. The newLine() method inserts a line break between "First line" and "Second line". If everything goes well, the console will print "Successfully wrote to the file."
+
+Append to a Text File
+- To add new content to the end of a file (instead of overwriting), pass true to FileWriter:
+- Example
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Main {
+    public static void main(String[] args) {
+        // true = append mode
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("filename.txt", true))) {
+            bw.newLine();                      // move to a new line
+            bw.write("Appended line");         // add new text at the end
+            System.out.println("Successfully appended to the file.");
+        } catch (IOException e) {
+            System.out.println("Error writing file.");
+        }
+    }
+}
+
+The output will be:
+- Successfully appended to the file.
+
+- Explanation: This program keeps the existing content of filename.txt and adds a new line with the text "Appended line" at the end. If everything works, the console prints "Successfully appended to the file."
+
+Comparing File Writing Classes
+Java gives you several ways to write to files. Here's when to pick each one:
+
+- FileWriter - best for simple text writing. Quick and easy to use.
+- BufferedWriter - better for larger text files, because it is faster and lets you easily add line breaks with newLine().
+- FileOutputStream - best for binary files (like images, PDFs, or audio)

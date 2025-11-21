@@ -1,0 +1,20 @@
+I/O Streams (Input/Output Streams)
+
+- You've already seen how to create, read, and write simple text files.
+- In Java, there is an important difference between working with the File class and working with I/O Streams (Input/Output Stream):
+- The File class (from java.io) is used to get information about files and directories:
+--- Does the file exist?
+--- What is its name or size?
+--- Create or delete files and folders
+- But: the File class does not read or write the contents of the file.
+- So far, we have used FileWriter for writing text and Scanner for reading text. These are easy to use, but they are mainly designed for simple text files.
+- I/O Streams are more flexible, because they work with text and binary data (like images, audio, PDFs).
+
+Types of Streams
+- Byte Streams
+--- Work with raw binary data (like images, audio, and PDF files).
+--- Examples: FileInputStream, FileOutputStream.
+- Character Streams
+--- Work with text (characters and strings). These streams automatically handle character encoding.
+--- Examples: FileReader, FileWriter, BufferedReader, BufferedWriter.
+- Tip: Use character streams when working with text, and byte streams when working with binary data.
